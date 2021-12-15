@@ -71,7 +71,7 @@ export default {
   width: 100%;
   border-radius: 6px !important;
   box-sizing: border-box;
-  background: rgba(15, 15, 15, 1);
+  background: rgba(5, 5, 5, 1);
   border: 2px solid rgba(255, 255, 255, 0.2);
   color: white;
   font-family: "Roboto", "Arial";

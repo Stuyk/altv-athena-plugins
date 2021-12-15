@@ -66,7 +66,6 @@ export default {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: rgba(10, 10, 10, 1) !important;
   box-sizing: border-box;
 }
 
