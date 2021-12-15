@@ -22,7 +22,7 @@
 import Header from "./Header.vue";
 
 export default {
-  name: "MainSearch",
+  name: "MainDisplay",
   components: {
     Header,
   },
@@ -41,11 +41,20 @@ export default {
   },
   computed: {
     getSlideshowBackground() {
+      if (!this.content || !this.content.images) {
+        return '';
+      }
+
       return `background-image: url('${this.content.images[this.imageIndex]}');`
     }
   },
   methods: {
     updateSlide() {
+      if (!this.content || !this.content.images) {
+        this.imageIndex = 0;
+        return;
+      }
+
       if (this.imageIndex + 1 >= this.content.images.length) {
         this.imageIndex = 0;
       } else {
@@ -58,11 +67,13 @@ export default {
       this.updateSlide();
     }, 3000);
 
-    console.log(this.content);
     console.log("[Vue] -> Mounted App.vue");
   },
   unmounted() {
-    clearInterval(this.interval);
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
   }
 };
 </script>

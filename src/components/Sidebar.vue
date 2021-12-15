@@ -78,8 +78,8 @@ export default {
 }
 
 .option:hover {
-  color: #ffc107;
-  text-shadow: 0 0 10px #ffc107;
+  color: #2196F3;
+  text-shadow: 0 0 10px #2196F3;
 }
 
 .option:hover {
@@ -87,9 +87,9 @@ export default {
 }
 
 .search-highlight {
-  border-left: 4px solid #ffc107;
+  border-right: 4px solid #2196F3;
   width: 100%;
-  color: #ffc107;
-  text-shadow: 0 0 5px #ffc107;
+  color: #2196F3;
+  text-shadow: 0 0 5px #2196F3;
 }
 </style>

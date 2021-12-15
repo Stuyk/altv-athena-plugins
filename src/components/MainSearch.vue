@@ -14,9 +14,11 @@
         <Search :pages="suggestions" />
       </template>
       <template v-if="suggestions.length <= 0 && search.length >= 1">
-          <span class="zero-result bolder pt-6">
-              0 Results
-         </span>
+        <span class="zero-result bolder pt-6">
+            0 Results
+            <br />
+            <img class="mt-6 rounded-lg" src="https://thumbs.gfycat.com/HoarseInsidiousDachshund-size_restricted.gif" width="200" />
+        </span>
       </template>
     </div>
   </div>
@@ -63,7 +65,7 @@ export default {
 
       const searchInput = newValue.split(" ");
       const suggestions = this.pages.filter((page) => {
-        const title = page.name.replace(/ /g, "").toLowerCase();
+        const title = page.title.replace(/ /g, "").toLowerCase();
         const descr = page.description.replace(/ /g, "").toLowerCase();
         const keywords = page.keywords.join("").toLowerCase();
         const fullSearch = title + descr + keywords;
