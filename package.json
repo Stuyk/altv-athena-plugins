@@ -6,10 +6,13 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "build-pages": "node ./scripts/builder/index.js"
   },
   "devDependencies": {
+    "@astrojs/renderer-vue": "^0.2.1",
     "astro": "^0.21.12",
-    "@astrojs/renderer-vue": "^0.2.1"
+    "front-matter": "^4.0.2",
+    "glob": "^7.2.0"
   }
 }

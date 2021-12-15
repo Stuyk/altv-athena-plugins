@@ -1,18 +1,17 @@
 <template>
-  <div id="header" class="header">
-    <div class="left pl-4 pr-4 bolder">
-      <span>Athena Plugins</span>
+  <div id="header" class="header-wrapper">
+    <div class="top">
+        <a class="header-text bolder pl-3" href="/search">Athena Plugins</a>
     </div>
-    <div class="middle pt-2 pb-2 pr-4" v-if="!hideSearch">
-      <input
-        type="text"
-        :value="modelValue"
-        @input="$emit('update:modelValue', $event.target['value'])"
-        placeholder="Search for title, keywords, description, etc."
-        class="pa-2"
-      />
+    <div class="bottom pb-4 pl-3 pr-3" v-if="!hideSearch">
+        <input
+          type="text"
+          :value="modelValue"
+          @input="$emit('update:modelValue', $event.target['value'])"
+          placeholder="Search for title, keywords, description, etc."
+          class="pa-2"
+        />
     </div>
-    <div class="right"></div>
   </div>
 </template>
 
@@ -43,36 +42,49 @@ export default {
 </script>
 
 <style scoped>
-.header {
+.header-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100vw;
-  min-height: 50px;
-  max-height: 50px;
   overflow: hidden;
   background: rgba(15, 15, 15, 1) !important;
   border-bottom: 2px solid rgba(25, 25, 25, 1);
   box-sizing: border-box;
 }
 
-.header .left {
+.top {
   display: flex;
   flex-direction: row;
-  min-width: 200px;
-  max-width: 25vw;
+  width: 100vw;
+  min-height: 50px;
+  max-height: 50px;
   box-sizing: border-box;
-  align-content: center;
   align-items: center;
 }
 
-.header .middle {
+.bottom {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 100vw;
+  min-height: 50px;
+  max-height: 50px;
   box-sizing: border-box;
+    align-items: center;
 }
 
-.header .middle input {
+.header-text {
+  color: white;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+}
+
+.header-text:hover {
+  color: #2196F3;
+  cursor: pointer;
+}
+
+.bottom input {
   width: 100%;
   border-radius: 6px !important;
   box-sizing: border-box;

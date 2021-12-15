@@ -96,8 +96,6 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  min-height: 50px;
-  max-height: 50px;
   overflow: hidden;
   background: rgba(15, 15, 15, 1) !important;
   border-bottom: 2px solid rgba(25, 25, 25, 1);

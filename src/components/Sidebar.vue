@@ -52,6 +52,12 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 800px) {
+  .sidebar {
+    display: none !important;
+  }
+}
+
 .sidebar {
   min-height: calc(100vh - 25px);
   max-height: calc(100vh - 25px);

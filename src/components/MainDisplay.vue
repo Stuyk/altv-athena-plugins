@@ -1,18 +1,15 @@
 <template>
-  <div id="vue">
-    <Header :hideSearch="true" class="shadow"></Header>
-    <div class="content shadow">
-      <span class="go-back">
+  <div id="vue" class="main">
+    <Header :hideSearch="true"></Header>
+    <div class="content-wrapper">
+      <!-- <span class="go-back">
         Back
-      </span>
-      <div class="slideshow" :style="getSlideshowBackground">
-        <div class="slideshow-info">
-          <div class="title">{{ content.title }}</div>
-          <div class="desc pt-4">{{ content.description }}</div>
+      </span> -->
+      <div class="content">
+        <div class="slideshow" :style="getSlideshowBackground" />
+        <div class="markdown pl-12 pr-12 pt-3 pb-12" lang="ts">
+          <slot />
         </div>
-      </div>
-      <div class="markdown pl-6 pr-6 pt-3">
-        <slot />
       </div>
     </div>
   </div>
@@ -79,8 +76,132 @@ export default {
 </script>
 
 <style>
+astro-fragment h1, astro-fragment h2, astro-fragment h3, astro-fragment h4, astro-fragment h5, astro-fragment h6 {
+  color: #ffc107 !important;
+}
+
+astro-fragment a {
+  color: #2196F3 !important;
+  text-decoration: none;
+}
+
+astro-fragment a:hover {
+  color: #64B5F6 !important;
+}
+
 pre {
-  font-size: 16px !important;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 12px;
+  font-size: 14px;
+}
+
+code:not(pre > code) {
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  padding: 3px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.language-css > code,
+.language-sass > code,
+.language-scss > code {
+  color: #fd9170;
+}
+
+[class*='language-'] .namespace {
+  opacity: 0.7;
+}
+
+.token.plain-text,
+[class*='language-bash'] span.token,
+[class*='language-shell'] span.token {
+  color: hsla(var(--color-gray-90), 1);
+}
+
+[class*='language-bash'] span.token,
+[class*='language-shell'] span.token {
+  font-style: bold;
+}
+
+.token.prolog,
+.token.comment,
+[class*='language-bash'] span.token.comment,
+[class*='language-shell'] span.token.comment {
+  color: hsla(var(--color-gray-70), 1);
+}
+
+.token.selector,
+.token.tag,
+.token.unit,
+.token.url,
+.token.variable,
+.token.entity,
+.token.deleted {
+  color: #fa5e5b;
+}
+
+.token.boolean,
+.token.constant,
+.token.doctype,
+.token.number,
+.token.regex,
+.token.builtin,
+.token.class,
+.token.hexcode,
+.token.class-name,
+.token.attr-name {
+  color: hsla(var(--color-yellow), 1);
+}
+
+.token.atrule,
+.token.attribute,
+.token.attr-value .token.punctuation,
+.token.attr-value,
+.token.pseudo-class,
+.token.pseudo-element,
+.token.string {
+  color: hsla(var(--color-green), 1);
+}
+
+.token.symbol,
+.token.function,
+.token.id,
+.token.important {
+  color: hsla(var(--color-blue), 1);
+}
+
+.token.important,
+.token.id {
+  font-weight: bold;
+}
+
+.token.cdata,
+.token.char,
+.token.property {
+  color: #23b1af;
+}
+
+.token.inserted {
+  color: hsla(var(--color-green), 1);
+}
+
+.token.keyword {
+  color: #ff657c;
+  font-style: italic;
+}
+
+.token.operator {
+  color: hsla(var(--color-gray-70), 1);
+}
+
+.token.attr-value .token.attr-equals,
+.token.punctuation {
+  color: hsla(var(--color-gray-80), 1);
 }
 </style>
 
@@ -133,6 +254,29 @@ pre {
   box-sizing: border-box;
 }
 
+.main {
+  background: rgba(10, 10, 10, 1) !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .content-wrapper {
+     padding-left: 0px !important;
+     padding-right: 0px !important;
+  }
+ 
+}
+
+.content-wrapper {
+  position: relative;
+  min-height: calc(100vh - 36px);
+  max-height: calc(100vh - 36px);
+  width: 100%;
+  background: rgba(10, 10, 10, 1);
+  padding-left: 200px;
+  padding-right: 200px;
+  box-sizing: border-box !important;
+}
+
 .content {
   position: relative;
   display: flex;
@@ -143,6 +287,7 @@ pre {
   overflow-y: scroll;
   overflow-x: hidden;
   box-sizing: border-box;
+  background: rgba(25, 25, 25, 1);
 }
 
 .go-back {
@@ -165,17 +310,18 @@ pre {
   flex-direction: column;
   position: relative;
   min-height: 300px;
-  box-shadow: inset 0px 5px 10px black;
   overflow: hidden;
-  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   box-sizing: border-box;
-  border-bottom: 4px solid rgba(255, 255, 255, 0.2);
   justify-content: center;
   align-content: center;
   align-items: center;
   justify-items: center;
+  margin-right: 12px;
+  margin-left: 12px;
 }
 
 .slideshow .slideshow-info {

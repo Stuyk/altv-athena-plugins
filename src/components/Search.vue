@@ -50,7 +50,7 @@ export default {
       return false;
     },
     updatePath(path) {
-        window.location.pathname = path;
+        window.location.pathname = path
     }
   },
   mounted() {
