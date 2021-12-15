@@ -1,0 +1,35 @@
+[
+    {
+      "name": "Door Control Plugin",
+      "version": "3.0.0+",
+      "description": "This plugin will let you lock, and unlock world doors.",
+      "author": "Der Lord",
+      "keywords": [
+        "free",
+        "client",
+        "streamer"
+      ],
+      "images": [
+        "https://i.imgur.com/BZOzE6L.png",
+        "https://i.imgur.com/Vqqe582.png",
+        "https://i.imgur.com/sqKwAai.png"
+      ]
+    },
+    {
+      "name": "Plant System",
+      "version": "3.0.0+",
+      "description": "Grow your own food, and drugs with this plant system.",
+      "price": "10.00",
+      "author": "Der Lord",
+      "keywords": [
+        "client",
+        "streamer",
+        "premium"
+      ],
+      "images": [
+        "https://i.imgur.com/BZOzE6L.png",
+        "https://i.imgur.com/Vqqe582.png",
+        "https://i.imgur.com/sqKwAai.png"
+      ]
+    }
+]

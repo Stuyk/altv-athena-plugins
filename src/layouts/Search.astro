@@ -1,0 +1,20 @@
+---
+import App from '../components/App.vue';
+import pages from '../pages.json'
+
+const { content = {} } = Astro.props;
+const currentPage = Astro.request.url.pathname;
+const currentFile = `src/pages/plugins${currentPage.replace(/\/$/, "")}.md`;
+---
+
+<html>
+    <head>
+        <title>{content.title}</title>
+        <link rel="stylesheet" href={Astro.resolve('../styles/core.css')}>
+    </head>
+    <body>
+        <App client:load pages={pages}>
+            <slot />
+        </App>
+    </body>
+</html>

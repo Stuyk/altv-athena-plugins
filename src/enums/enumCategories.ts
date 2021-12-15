@@ -1,0 +1,16 @@
+export enum CATEGORY {
+    CLIENT = 'client',
+    DATA = 'data',
+    FREE = 'free',
+    INTERFACE = 'interface',
+    ITEM = 'item',
+    PLAYER = 'player',
+    PREMIUM = 'premium',
+    SERVER = 'server',
+    STREAMER = 'streamer',
+    SYSTEM = 'system',
+    TOOL = 'tool',
+    UTILITY = 'utility',
+    VEHICLE = 'vehicle',
+    VOICE = 'voice',
+}
