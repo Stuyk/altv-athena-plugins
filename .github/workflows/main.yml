@@ -6,13 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "Empty Commit"
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit --allow-empty -m "Update"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - uses: actions/setup-node@v2
         with:
-          github_token: ${{ secrets.CI_SECRET }}
+          node-version: '16'
+      - name: Build
+        run: |
+          npm install
+          npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: dist
+          folder: dist
           
