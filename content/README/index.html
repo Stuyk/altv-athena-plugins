@@ -1,0 +1,81 @@
+<!DOCTYPE html><html><head></head><body><h1 id="athena-plugins-md">Athena Plugins MD</h1>
+<p>Contribute your plugins by making a pull request to this repository.</p>
+<p>Inside of the folder <code data-astro-raw="">plugins</code> you should do the following:</p>
+<ol>
+<li>
+<p>Create a folder with your name. The name must be hyphenated and not contain spaces. Please make sure that it is entirely lowercase as well. The continuous integration will run checks against your PR when you submit your changes.</p>
+</li>
+<li>
+<p>Create an <code data-astro-raw="">.md</code> file with all the front matter listed below and ensure you update all front matter so that it fits your plugin.</p>
+</li>
+</ol>
+<h1 id="front-matter">Front Matter</h1>
+<p>When you are creating the markdown file you will need to use one of the two templates below depending on how you are distributing the resource. Keep in mind that you are entirely responsible for your own customers. Providing or posting premium plugins in this repository that do not work will get you and your license key de-activated from Athena.</p>
+<p>Act responsibly.</p>
+<h2 id="free">Free</h2>
+<pre class="language-md"><code data-astro-raw="" class="language-md"><span class="token front-matter-block"><span class="token punctuation">---</span>
+
+<span class="token font-matter yaml language-yaml">layout: ../../../../layouts/Main.astro
+title: "Example Plugin"
+description: "Really cool plant system that does plant things."
+author: "Stuyk"
+version: "3.0.0+"
+images: ["https://i.imgur.com/BZOzE6L.png", "https://i.imgur.com/Vqqe582.png", "https://i.imgur.com/sqKwAai.png"]
+keywords: ["free", "client", "player", "system"]
+url: "https://github.com/"</span>
+
+<span class="token punctuation">---</span></span>
+
+<span class="token title important"><span class="token punctuation">#</span> Example Free Plugin</span>
+
+Wow, look at my cool plugin. I can talk about all these amazing features it has.
+
+<span class="token title important"><span class="token punctuation">#</span> Installation Instructions</span>
+
+<span class="token list punctuation">1.</span> Grab from github
+<span class="token list punctuation">2.</span> Put folder somewhere.
+</code></pre>
+<h2 id="premium">Premium</h2>
+<p>Ensure that your front matter is</p>
+<pre class="language-md"><code data-astro-raw="" class="language-md"><span class="token front-matter-block"><span class="token punctuation">---</span>
+
+<span class="token font-matter yaml language-yaml">layout: ../../../../layouts/Main.astro
+title: "Example Premium Plugin"
+description: "Really cool plant system that does plant things."
+author: "Stuyk"
+version: "3.0.0+"
+images: ["https://i.imgur.com/BZOzE6L.png", "https://i.imgur.com/Vqqe582.png", "https://i.imgur.com/sqKwAai.png"]
+keywords: ["premium", "client", "player", "system"]
+url: "https://whatever.provider.com"
+price: "5.99"</span>
+
+<span class="token punctuation">---</span></span>
+
+<span class="token title important"><span class="token punctuation">#</span> Example Premium Plugin</span>
+
+Wow, look at my cool plugin. I can talk about all these amazing features it has.
+
+<span class="token title important"><span class="token punctuation">#</span> Installation Instructions</span>
+
+<span class="token list punctuation">1.</span> Purchase the repo access.
+<span class="token list punctuation">2.</span> Download it.
+<span class="token list punctuation">3.</span> Do something else.
+</code></pre>
+<h1 id="categories">Categories</h1>
+<p>This is a list of the currently valid category names. Ensure they are lower case or the PR bot will make you change it. Use the category names on the right-hand side of the enum.</p>
+<pre class="language-ts"><code data-astro-raw="" class="language-ts"><span class="token keyword">export</span> <span class="token keyword">enum</span> <span class="token constant">CATEGORY</span> <span class="token punctuation">{</span>
+    <span class="token constant">CLIENT</span> <span class="token operator">=</span> <span class="token string">'client'</span><span class="token punctuation">,</span>
+    <span class="token constant">DATA</span> <span class="token operator">=</span> <span class="token string">'data'</span><span class="token punctuation">,</span>
+    <span class="token constant">FREE</span> <span class="token operator">=</span> <span class="token string">'free'</span><span class="token punctuation">,</span>
+    <span class="token constant">INTERFACE</span> <span class="token operator">=</span> <span class="token string">'interface'</span><span class="token punctuation">,</span>
+    <span class="token constant">ITEM</span> <span class="token operator">=</span> <span class="token string">'item'</span><span class="token punctuation">,</span>
+    <span class="token constant">PLAYER</span> <span class="token operator">=</span> <span class="token string">'player'</span><span class="token punctuation">,</span>
+    <span class="token constant">PREMIUM</span> <span class="token operator">=</span> <span class="token string">'premium'</span><span class="token punctuation">,</span>
+    <span class="token constant">SERVER</span> <span class="token operator">=</span> <span class="token string">'server'</span><span class="token punctuation">,</span>
+    <span class="token constant">STREAMER</span> <span class="token operator">=</span> <span class="token string">'streamer'</span><span class="token punctuation">,</span>
+    <span class="token constant">SYSTEM</span> <span class="token operator">=</span> <span class="token string">'system'</span><span class="token punctuation">,</span>
+    <span class="token constant">TOOL</span> <span class="token operator">=</span> <span class="token string">'tool'</span><span class="token punctuation">,</span>
+    <span class="token constant">UTILITY</span> <span class="token operator">=</span> <span class="token string">'utility'</span><span class="token punctuation">,</span>
+    <span class="token constant">VEHICLE</span> <span class="token operator">=</span> <span class="token string">'vehicle'</span><span class="token punctuation">,</span>
+    <span class="token constant">VOICE</span> <span class="token operator">=</span> <span class="token string">'voice'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre></body></html>
