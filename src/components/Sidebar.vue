@@ -67,6 +67,8 @@ export default {
   overflow-x: hidden;
   background: rgba(15, 15, 15, 1) !important;
   direction: rtl;
+  border-right: 2px solid rgba(25, 25, 25, 1);
+  box-sizing: border-box;
 }
 
 .sidebar .options {

@@ -67,6 +67,10 @@ export default {
   overflow-y: scroll;
   overflow-x: hidden;
   box-sizing: border-box;
+  background: rgba(10, 10, 10, 1);
+  background-image: url('/assets/bg.png');
+  background-repeat: repeat;
+  background-blend-mode: difference;
 }
 
 .search .result {
@@ -75,12 +79,13 @@ export default {
   flex-direction: row;
   min-height: 150px;
   max-height: 150px;
-  border: 2px solid transparent;
+  border: 2px solid rgba(35, 35, 35, 1);
   border-radius: 6px;
   background: rgba(15, 15, 15, 1);
   box-sizing: border-box;
   overflow: hidden;
   transition: all .1s ease-in;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
 }
 
 .search .result:hover > .details > .name {
@@ -89,7 +94,7 @@ export default {
 
 .search .result:hover > .details > .description {
   color: #64B5F6 !important;
-  
+
 }
 
 .search .result:hover > .details > .premium, .search .result:hover > .details > .free {
@@ -98,10 +103,10 @@ export default {
 }
 
 .search .result:hover {
-  border: 2px solid #2196F3 !important;
+  /* border: 2px solid #2196F3 !important; */
   background: rgba(25, 25, 25, 1);
   cursor: pointer;
-  box-shadow: 0px 0px 5px #2196F3;
+  /* box-shadow: 0px 0px 5px #2196F3; */
 }
 
 .search .result .img {
@@ -112,7 +117,6 @@ export default {
   max-height: 150px !important;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
   box-sizing: border-box;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;

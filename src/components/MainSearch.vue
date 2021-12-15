@@ -1,5 +1,5 @@
 <template>
-  <div id="vue" class="stack">
+  <div id="vue" class="main-wrapper stack">
     <Header v-model="search"></Header>
     <div class="split">
       <Sidebar

@@ -7,7 +7,13 @@
       </span> -->
       <div class="content">
         <div class="slideshow" :style="getSlideshowBackground" />
+        
         <div class="markdown pl-12 pr-12 pt-3 pb-12" lang="ts">
+          <div class="call-to-action">
+            <a class="getter pa-3 bolder" :href="content.url" target="_blank" rel="noopener noreferrer" v-if="content.price">BUY ${{ content.price }}</a>
+            <a class="getter pa-3 bolder" :href="content.url" target="_blank" rel="noopener noreferrer" v-else>GET PLUGIN</a>
+            <span class="grey--text mt-2 mr-2">{{content.author }}</span>
+          </div>
           <slot />
         </div>
       </div>
@@ -275,6 +281,9 @@ code:not(pre > code) {
   padding-left: 200px;
   padding-right: 200px;
   box-sizing: border-box !important;
+  background-image: url('/assets/bg.png');
+  background-repeat: repeat;
+  background-blend-mode: difference;
 }
 
 .content {
@@ -288,6 +297,8 @@ code:not(pre > code) {
   overflow-x: hidden;
   box-sizing: border-box;
   background: rgba(25, 25, 25, 1);
+  border-left: 6px solid rgba(0, 0, 0, 0.4);
+  border-right: 6px solid rgba(0, 0, 0, 0.4);
 }
 
 .go-back {
@@ -320,8 +331,10 @@ code:not(pre > code) {
   align-content: center;
   align-items: center;
   justify-items: center;
-  margin-right: 12px;
-  margin-left: 12px;
+  margin-right: 4px;
+  margin-left: 4px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .slideshow .slideshow-info {
@@ -337,7 +350,37 @@ code:not(pre > code) {
 }
 
 .markdown {
+  position: relative;
   font-family: 'Roboto';
   text-align: justify;
 }
+
+.call-to-action {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-items: flex-end;
+  right: 0;
+  padding-top: 18px;
+  padding-right: 12px;
+}
+
+.getter {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  text-decoration: none;
+  color: white !important;
+}
+
+.getter:hover {
+  color: #2196F3 !important;
+  border-color: #2196F3;
+  box-shadow: 0px 0px 5px #2196F3;
+}
+
 </style>
