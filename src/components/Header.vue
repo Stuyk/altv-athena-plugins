@@ -1,7 +1,10 @@
 <template>
   <div id="header" class="header-wrapper">
     <div class="top">
-        <a class="header-text bolder pl-3" href="/search">Athena Plugins</a>
+        <a class="header-text bolder pl-3" href="/search">
+          <img src="/favicon-32x32.png" height="25" width="25" class="pr-3" />
+          <span>Athena Plugins</span>
+        </a>
     </div>
     <div class="bottom pb-4 pl-3 pr-3" v-if="!hideSearch">
         <input
@@ -60,6 +63,8 @@ export default {
   max-height: 50px;
   box-sizing: border-box;
   align-items: center;
+  justify-items: center;
+  align-content: center;
 }
 
 .bottom {
@@ -73,10 +78,15 @@ export default {
 }
 
 .header-text {
+  display: flex;
   color: white;
   letter-spacing: 0.1em;
   text-decoration: none;
   transition: all 0.1s ease-in;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .header-text:hover {
