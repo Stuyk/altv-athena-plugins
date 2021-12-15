@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "git submodule update --init --recursive --remote --force && npm run build-pages && astro build",
+    "build": "git fetch && git pull origin && git submodule update --init --recursive --remote --force && npm run build-pages && astro build",
     "preview": "astro preview",
     "build-pages": "node ./scripts/builder/index.js"
   },
