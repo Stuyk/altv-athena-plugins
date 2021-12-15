@@ -1,6 +1,7 @@
 [
     {
       "name": "Door Control Plugin",
+      "path": "plugins/der-lord/door-control",
       "version": "3.0.0+",
       "description": "This plugin will let you lock, and unlock world doors.",
       "author": "Der Lord",
@@ -17,6 +18,7 @@
     },
     {
       "name": "Plant System",
+      "path": "plugins/der-lord/plant-system",
       "version": "3.0.0+",
       "description": "Grow your own food, and drugs with this plant system.",
       "price": "10.00",

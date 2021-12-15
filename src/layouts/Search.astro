@@ -1,5 +1,5 @@
 ---
-import App from '../components/App.vue';
+import MainSearch from '../components/MainSearch.vue';
 import pages from '../pages.json'
 
 const { content = {} } = Astro.props;
@@ -13,8 +13,8 @@ const currentFile = `src/pages/plugins${currentPage.replace(/\/$/, "")}.md`;
         <link rel="stylesheet" href={Astro.resolve('../styles/core.css')}>
     </head>
     <body>
-        <App client:load pages={pages}>
+        <MainSearch client:load pages={pages}>
             <slot />
-        </App>
+        </MainSearch>
     </body>
 </html>

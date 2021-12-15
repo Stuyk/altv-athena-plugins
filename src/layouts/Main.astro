@@ -1,7 +1,5 @@
 ---
-import App from '../components/App.vue';
-import pages from '../pages.json'
-
+import MainDisplay from '../components/MainDisplay.vue';
 const { content = {} } = Astro.props;
 ---
 
@@ -11,8 +9,8 @@ const { content = {} } = Astro.props;
         <link rel="stylesheet" href={Astro.resolve('../styles/core.css')}>
     </head>
     <body>
-        <App client:load pages={pages}>
+        <MainDisplay content={content} client:load>
             <slot />
-        </App>
+        </MainDisplay>
     </body>
 </html>

@@ -29,7 +29,7 @@ import Search from "./Search.vue";
 import { getCategories } from "../utility/categories";
 
 export default {
-  name: "App",
+  name: "MainSearch",
   components: {
     Header,
     Sidebar,

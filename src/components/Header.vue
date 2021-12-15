@@ -3,7 +3,7 @@
     <div class="left pl-4 pr-4 bolder">
       <span>Athena Plugins</span>
     </div>
-    <div class="middle pt-2 pb-2 pr-4">
+    <div class="middle pt-2 pb-2 pr-4" v-if="!hideSearch">
       <input
         type="text"
         :value="modelValue"
@@ -23,8 +23,13 @@ export default {
     modelValue: {
       type: String,
       default: "",
-      required: true,
+      required: false,
     },
+    hideSearch: {
+        type: Boolean,
+        required: false,
+        default: false
+    }
   },
   data() {
     return {};

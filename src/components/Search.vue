@@ -1,6 +1,6 @@
 <template>
   <div id="vue" class="search pa-3">
-    <div class="result mb-3" v-for="(result, index) in pages" :key="index">
+    <div class="result mb-3" v-for="(result, index) in pages" :key="index" @click="updatePath(result.path)">
       <div class="img" :style="getImageStyle(result.images[0])">
         <div class="img-gradient"></div>
       </div>
@@ -29,6 +29,7 @@
         </div>
       </div>
     </div>
+    <div class="empty-space"></div>
   </div>
 </template>
 
@@ -39,7 +40,7 @@ export default {
     pages: {
       type: Array,
       required: true,
-    },
+    }
   },
   methods: {
     getImageStyle(url) {
@@ -52,6 +53,9 @@ export default {
 
       return false;
     },
+    updatePath(path) {
+        window.location.pathname = path;
+    }
   },
   mounted() {
     console.log("[Vue] -> Mounted Search.vue");
@@ -165,5 +169,9 @@ export default {
   border-top: 4px solid rgba(0, 0, 0, 0.3);
   border-bottom: 4px solid rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
+}
+
+.empty-space {
+    min-height: 12px;
 }
 </style>
