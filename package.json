@@ -1,21 +1,29 @@
 {
-  "name": "@example/starter",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "git fetch && git pull origin && git submodule update --init --recursive --remote --force && npm run build-pages && astro build",
-    "preview": "astro preview",
-    "build-pages": "node ./scripts/builder/index.js"
-  },
-  "devDependencies": {
-    "@astrojs/renderer-vue": "^0.2.1",
-    "astro": "^0.21.12",
-    "front-matter": "^4.0.2",
-    "glob": "^7.2.0"
-  },
-  "engines" : { 
-    "node" : ">=16" 
-  }
+    "name": "@example/starter",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "git fetch && git pull origin && git submodule update --init --recursive --remote --force && npm run build-pages && astro build",
+        "preview": "astro preview",
+        "build-pages": "node ./scripts/builder/index.js"
+    },
+    "devDependencies": {
+        "@astrojs/renderer-vue": "^0.2.1",
+        "astro": "^0.21.12",
+        "front-matter": "^4.0.2",
+        "glob": "^7.2.0"
+    },
+    "engines": {
+        "node": ">=16"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "printWidth": 120,
+        "singleQuote": true,
+        "semi": true,
+        "arrowParens": "always",
+        "trailingComma": "none"
+    }
 }

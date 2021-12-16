@@ -1,0 +1,169 @@
+astro-fragment h1,
+astro-fragment h2,
+astro-fragment h3,
+astro-fragment h4,
+astro-fragment h5,
+astro-fragment h6 {
+    font-family: 'Barlow Semi Condensed', 'Roboto', 'Arial';
+    color: #ffc107 !important;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 6px;
+    user-select: none;
+}
+
+astro-fragment h1 {
+    font-size: 26px;
+}
+
+astro-fragment h2 {
+    font-size: 24px;
+}
+
+astro-fragment h3 {
+    font-size: 22px;
+}
+
+astro-fragment h4 {
+    font-size: 20px;
+}
+
+astro-fragment h5 {
+    font-size: 18px;
+}
+
+astro-fragment p {
+    color: rgba(225, 225, 225, 1);
+    user-select: none;
+    font-size: 14px;
+    text-align: justify;
+}
+
+astro-fragment ol {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+astro-fragment a {
+    color: #2196f3 !important;
+    text-decoration: none;
+}
+
+astro-fragment a:hover {
+    color: #64b5f6 !important;
+}
+
+pre {
+    background: rgba(110, 166, 214, 0.1);
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 14px;
+}
+
+code:not(pre > code) {
+    background: rgba(110, 166, 214, 0.1);
+    font-size: 14px;
+    padding: 3px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.language-css > code,
+.language-sass > code,
+.language-scss > code {
+    color: #fd9170;
+}
+
+[class*='language-'] .namespace {
+    opacity: 0.7;
+}
+
+.token.plain-text,
+[class*='language-bash'] span.token,
+[class*='language-shell'] span.token {
+    color: hsla(var(--color-gray-90), 1);
+}
+
+[class*='language-bash'] span.token,
+[class*='language-shell'] span.token {
+    font-style: bold;
+}
+
+.token.prolog,
+.token.comment,
+[class*='language-bash'] span.token.comment,
+[class*='language-shell'] span.token.comment {
+    color: hsla(var(--color-gray-70), 1);
+}
+
+.token.selector,
+.token.tag,
+.token.unit,
+.token.url,
+.token.variable,
+.token.entity,
+.token.deleted {
+    color: #fa5e5b;
+}
+
+.token.boolean,
+.token.constant,
+.token.doctype,
+.token.number,
+.token.regex,
+.token.builtin,
+.token.class,
+.token.hexcode,
+.token.class-name,
+.token.attr-name {
+    color: hsla(var(--color-yellow), 1);
+}
+
+.token.atrule,
+.token.attribute,
+.token.attr-value .token.punctuation,
+.token.attr-value,
+.token.pseudo-class,
+.token.pseudo-element,
+.token.string {
+    color: hsla(var(--color-green), 1);
+}
+
+.token.symbol,
+.token.function,
+.token.id,
+.token.important {
+    color: hsla(var(--color-blue), 1);
+}
+
+.token.important,
+.token.id {
+    font-weight: bold;
+}
+
+.token.cdata,
+.token.char,
+.token.property {
+    color: #23b1af;
+}
+
+.token.inserted {
+    color: hsla(var(--color-green), 1);
+}
+
+.token.keyword {
+    color: #ff657c;
+    font-style: italic;
+}
+
+.token.operator {
+    color: hsla(var(--color-gray-70), 1);
+}
+
+.token.attr-value .token.attr-equals,
+.token.punctuation {
+    color: hsla(var(--color-gray-80), 1);
+}

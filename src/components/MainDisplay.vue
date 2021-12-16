@@ -1,386 +1,344 @@
 <template>
-  <div id="vue" class="main">
-    <Header :hideSearch="true"></Header>
-    <div class="content-wrapper">
-      <!-- <span class="go-back">
-        Back
-      </span> -->
-      <div class="content">
-        <div class="slideshow" :style="getSlideshowBackground" />
-        
-        <div class="markdown pl-12 pr-12 pt-3 pb-12" lang="ts">
-          <div class="call-to-action">
-            <a class="getter pa-3 bolder" :href="content.url" target="_blank" rel="noopener noreferrer" v-if="content.price">BUY ${{ content.price }}</a>
-            <a class="getter pa-3 bolder" :href="content.url" target="_blank" rel="noopener noreferrer" v-else>GET PLUGIN</a>
-            <span class="grey--text mt-2 mr-2">{{content.author }}</span>
-          </div>
-          <slot />
+    <div id="vue" class="main">
+        <Header :hideSearch="true"></Header>
+        <div class="content-wrapper">
+            <div class="zoom" v-if="zoom" @click="handleZoom(null)">
+                <div class="zoom-image" :style="getSlideshowImage(-1)" />
+            </div>
+            <div class="content">
+                <div class="slideshow ma-4">
+                    <div
+                        class="slide fade-in"
+                        @click="handleZoom(getImage(2))"
+                        ref="slide0"
+                        :style="getSlideshowImage(2)"
+                    />
+                    <div
+                        class="slide slide-middle fade-in"
+                        @click="handleZoom(getImage(0))"
+                        ref="slide1"
+                        :style="getSlideshowImage(0)"
+                    />
+                    <div
+                        class="slide fade-in"
+                        ref="slide2"
+                        @click="handleZoom(getImage(1))"
+                        :style="getSlideshowImage(1)"
+                    />
+                </div>
+                <div class="panels">
+                    <div class="inner-panel ma-4" lang="ts">
+                        <slot />
+                    </div>
+                    <div class="inner-panel ma-4">
+                        <a
+                            class="getter pa-3 bolder"
+                            :href="content.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            v-if="content.price"
+                            >BUY ${{ content.price }}</a
+                        >
+
+                        <a
+                            class="getter pa-3 bolder"
+                            :href="content.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            v-else
+                            >GET PLUGIN</a
+                        >
+                        <div class="grey--text overline mb-2 mt-6 text--darken-1">Author</div>
+                        <span class="grey--text mr-2 subtitle-2" style="font-size: 14px">{{ content.author }}</span>
+                        <div class="grey--text overline mb-2 mt-6 text--darken-1">Discord</div>
+                        <div class="grey--text subtitle-2">
+                            {{ content.disord ? content.discord : "Add 'discord' to FrontMatter" }}
+                        </div>
+                        <div class="grey--text overline mb-2 mt-6 text--darken-1">Keywords</div>
+                        <div class="grey--text text--darken-2 subtitle-2">{{ content.keywords.join(', ') }}</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Header from "./Header.vue";
+import Header from './Header.vue';
 
 export default {
-  name: "MainDisplay",
-  components: {
-    Header,
-  },
-  data() {
-    return {
-      search: '',
-      imageIndex: 0,
-      interval: null
-    };
-  },
-  props: {
-    content: {
-      type: Object,
-      required: true,
-    }
-  },
-  computed: {
-    getSlideshowBackground() {
-      if (!this.content || !this.content.images) {
-        return '';
-      }
+    name: 'MainDisplay',
+    components: {
+        Header
+    },
+    data() {
+        return {
+            zoom: false,
+            search: '',
+            imageIndex: 0,
+            interval: null,
+            defaultSlide: 'https://i.imgur.com/nx4Pt4X.png',
+            images: []
+        };
+    },
+    props: {
+        content: {
+            type: Object,
+            required: true
+        }
+    },
+    computed: {
+        getSlideshowBackground() {
+            if (!this.content || !this.content.images) {
+                return '';
+            }
 
-      return `background-image: url('${this.content.images[this.imageIndex]}');`
-    }
-  },
-  methods: {
-    updateSlide() {
-      if (!this.content || !this.content.images) {
-        this.imageIndex = 0;
-        return;
-      }
+            return `background-image: url('${this.content.images[this.imageIndex]}');`;
+        }
+    },
+    methods: {
+        getImage(index) {
+            console.log(index);
+            if (this.images[index] === null || this.images[index] === undefined) {
+                return this.defaultSlide;
+            }
 
-      if (this.imageIndex + 1 >= this.content.images.length) {
-        this.imageIndex = 0;
-      } else {
-        this.imageIndex += 1;
-      }
-    }
-  },
-  mounted() {
-    this.interval = setInterval(() => {
-      this.updateSlide();
-    }, 3000);
+            return this.images[index];
+        },
+        getSlideshowImage(index) {
+            if (index <= -1) {
+                return `background-image: url('${this.zoom}');`;
+            }
 
-    console.log("[Vue] -> Mounted App.vue");
-  },
-  unmounted() {
-    if (this.interval) {
-      clearInterval(this.interval);
-      this.interval = null;
+            if (!this.images[index]) {
+                return `background-image: url('${this.defaultSlide}');`;
+            }
+
+            return `background-image: url('${this.getImage(index)}');`;
+        },
+        handleZoom(url) {
+            console.log(url);
+            this.zoom = this.zoom ? null : url;
+        },
+        async sleep(ms) {
+            return new Promise((r) => {
+                setTimeout(() => {
+                    r();
+                }, ms);
+            });
+        },
+        async updateSlide() {
+            for (let i = 0; i <= 2; i++) {
+                this.$refs[`slide${i}`].classList.remove('fade-in');
+                this.$refs[`slide${i}`].classList.add('fade-out');
+            }
+
+            const images = [...this.images];
+            const endImage = images.pop();
+            images.unshift(endImage);
+            this.images = images;
+
+            await this.sleep(1500);
+
+            this.$nextTick(() => {
+                for (let i = 0; i <= 2; i++) {
+                    let timeout = 0;
+                    if (i !== 1) {
+                        timeout = 500;
+                    }
+
+                    setTimeout(() => {
+                        this.$refs[`slide${i}`].classList.add('fade-in');
+                        this.$refs[`slide${i}`].classList.remove('fade-out');
+                    }, timeout);
+                }
+            });
+        },
+        setupImages() {
+            const images = [...this.content.images];
+            if (images.length <= 1) {
+                images.push(null);
+                images.push(null);
+            }
+
+            this.images = images;
+        }
+    },
+    watch: {
+        zoom() {
+            console.log('Toggled Image Zoom');
+        }
+    },
+    mounted() {
+        this.setupImages();
+
+        this.interval = setInterval(() => {
+            this.updateSlide();
+        }, 8000);
+
+        console.log('[Vue] -> Mounted App.vue');
+    },
+    unmounted() {
+        if (this.interval) {
+            clearInterval(this.interval);
+            this.interval = null;
+        }
     }
-  }
 };
 </script>
 
 <style>
-astro-fragment h1, astro-fragment h2, astro-fragment h3, astro-fragment h4, astro-fragment h5, astro-fragment h6 {
-  color: #ffc107 !important;
-}
-
-astro-fragment a {
-  color: #2196F3 !important;
-  text-decoration: none;
-}
-
-astro-fragment a:hover {
-  color: #64B5F6 !important;
-}
-
-pre {
-  background: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  box-sizing: border-box;
-  padding: 12px;
-  font-size: 14px;
-}
-
-code:not(pre > code) {
-  background: rgba(0, 0, 0, 0.2);
-  font-size: 14px;
-  padding: 3px;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-.language-css > code,
-.language-sass > code,
-.language-scss > code {
-  color: #fd9170;
-}
-
-[class*='language-'] .namespace {
-  opacity: 0.7;
-}
-
-.token.plain-text,
-[class*='language-bash'] span.token,
-[class*='language-shell'] span.token {
-  color: hsla(var(--color-gray-90), 1);
-}
-
-[class*='language-bash'] span.token,
-[class*='language-shell'] span.token {
-  font-style: bold;
-}
-
-.token.prolog,
-.token.comment,
-[class*='language-bash'] span.token.comment,
-[class*='language-shell'] span.token.comment {
-  color: hsla(var(--color-gray-70), 1);
-}
-
-.token.selector,
-.token.tag,
-.token.unit,
-.token.url,
-.token.variable,
-.token.entity,
-.token.deleted {
-  color: #fa5e5b;
-}
-
-.token.boolean,
-.token.constant,
-.token.doctype,
-.token.number,
-.token.regex,
-.token.builtin,
-.token.class,
-.token.hexcode,
-.token.class-name,
-.token.attr-name {
-  color: hsla(var(--color-yellow), 1);
-}
-
-.token.atrule,
-.token.attribute,
-.token.attr-value .token.punctuation,
-.token.attr-value,
-.token.pseudo-class,
-.token.pseudo-element,
-.token.string {
-  color: hsla(var(--color-green), 1);
-}
-
-.token.symbol,
-.token.function,
-.token.id,
-.token.important {
-  color: hsla(var(--color-blue), 1);
-}
-
-.token.important,
-.token.id {
-  font-weight: bold;
-}
-
-.token.cdata,
-.token.char,
-.token.property {
-  color: #23b1af;
-}
-
-.token.inserted {
-  color: hsla(var(--color-green), 1);
-}
-
-.token.keyword {
-  color: #ff657c;
-  font-style: italic;
-}
-
-.token.operator {
-  color: hsla(var(--color-gray-70), 1);
-}
-
-.token.attr-value .token.attr-equals,
-.token.punctuation {
-  color: hsla(var(--color-gray-80), 1);
-}
+@import '../styles/syntax.css';
 </style>
 
 <style scoped>
+@import '../styles/mainDisplay/slideshow.css';
+
 .header {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  min-height: 50px;
-  max-height: 50px;
-  overflow: hidden;
-  background: rgba(15, 15, 15, 1) !important;
-  border-bottom: 2px solid rgba(25, 25, 25, 1);
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-height: 50px;
+    max-height: 50px;
+    overflow: hidden;
+    background: rgba(15, 15, 15, 1) !important;
+    border-bottom: 2px solid rgba(25, 25, 25, 1);
+    box-sizing: border-box;
 }
 
 .header .left {
-  display: flex;
-  flex-direction: row;
-  min-width: 15%;
-  max-width: 15%;
-  box-sizing: border-box;
-  align-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    min-width: 15%;
+    max-width: 15%;
+    box-sizing: border-box;
+    align-content: center;
+    align-items: center;
 }
 
 .header .middle {
-  display: flex;
-  flex-direction: row;
-  min-width: 40%;
-  max-width: 40%;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    min-width: 40%;
+    max-width: 40%;
+    box-sizing: border-box;
 }
 
 .header .middle input {
-  width: 100%;
-  border-radius: 6px !important;
-  box-sizing: border-box;
-  background: rgba(15, 15, 15, 1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  font-family: "Roboto", "Arial";
+    width: 100%;
+    border-radius: 6px !important;
+    box-sizing: border-box;
+    background: rgba(15, 15, 15, 1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: 'Roboto', 'Arial';
 }
 
 .header .right {
-  display: flex;
-  flex-direction: row;
-  min-width: 45%;
-  max-width: 45%;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    min-width: 45%;
+    max-width: 45%;
+    box-sizing: border-box;
 }
 
 .main {
-  background: rgba(10, 10, 10, 1) !important;
+    display: flex;
+    flex-direction: column;
+    background: rgba(10, 10, 10, 1);
+    background-image: url('/assets/bg.png');
+    background-repeat: repeat;
+    background-blend-mode: difference;
 }
 
 @media only screen and (max-width: 800px) {
-  .content-wrapper {
-     padding-left: 0px !important;
-     padding-right: 0px !important;
-  }
- 
+    .content-wrapper {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
 }
 
 .content-wrapper {
-  position: relative;
-  min-height: calc(100vh - 36px);
-  max-height: calc(100vh - 36px);
-  width: 100%;
-  background: rgba(10, 10, 10, 1);
-  padding-left: 200px;
-  padding-right: 200px;
-  box-sizing: border-box !important;
-  background-image: url('/assets/bg.png');
-  background-repeat: repeat;
-  background-blend-mode: difference;
+    display: flex;
+    position: relative;
+    min-height: calc(100vh - 36px);
+    max-height: calc(100vh - 36px);
+    width: 80%;
+    box-sizing: border-box !important;
+    align-self: center;
 }
 
 .content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 36px);
-  max-height: calc(100vh - 36px);
-  width: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  background: rgba(25, 25, 25, 1);
-  border-left: 6px solid rgba(0, 0, 0, 0.4);
-  border-right: 6px solid rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 36px);
+    max-height: calc(100vh - 36px);
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background: rgba(15, 15, 15, 1);
+    border-left: 6px solid rgba(0, 0, 0, 0.4);
+    border-right: 6px solid rgba(0, 0, 0, 0.4);
 }
 
-.go-back {
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 24px;
+.panels {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    padding-top: 28px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    padding-bottom: 12px;
 }
 
-.go-back:hover {
-  cursor: pointer;
-}
-
-.go-back::before {
-  content: '🠐 ';
-}
-
-.slideshow {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  min-height: 300px;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  box-sizing: border-box;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  justify-items: center;
-  margin-right: 4px;
-  margin-left: 4px;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-
-.slideshow .slideshow-info {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  text-shadow: 0px 0px 5px black, 0px 0px 10px black;
-  text-align: center;
-}
-
-.slideshow-info .title {
-  font-size: 36px !important;
-}
-
-.markdown {
-  position: relative;
-  font-family: 'Roboto';
-  text-align: justify;
+.inner-panel {
+    display: flex;
+    flex-direction: column;
+    background: rgba(5, 5, 5, 1);
+    border-radius: 6px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    padding: 24px;
 }
 
 .call-to-action {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  align-content: flex-end;
-  justify-items: flex-end;
-  right: 0;
-  padding-top: 18px;
-  padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-items: flex-end;
 }
 
 .getter {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-sizing: border-box;
-  text-decoration: none;
-  color: white !important;
+    background: rgba(25, 25, 25, 1);
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white !important;
+    transition: all 0.0125s ease-in;
+    box-shadow: 0px 5px rgba(20, 20, 20, 1);
+}
+
+.getter:active {
+    transform: scale(0.98) translateY(5px) !important;
+    box-shadow: 0px 2px rgba(20, 20, 20, 1) !important;
 }
 
 .getter:hover {
-  color: #2196F3 !important;
-  border-color: #2196F3;
-  box-shadow: 0px 0px 5px #2196F3;
+    border-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0px 0px 5px white;
+    box-shadow: 0px 6px rgba(20, 20, 20, 1);
+    transform: translateY(-1px);
 }
 
+.markdown {
+    position: relative;
+    font-family: 'Roboto';
+    text-align: justify;
+    min-height: 600px;
+}
 </style>
