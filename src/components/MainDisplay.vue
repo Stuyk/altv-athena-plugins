@@ -252,7 +252,7 @@ export default {
     animation: gradient 80s ease infinite;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .content-wrapper {
         padding-left: 0px !important;
         padding-right: 0px !important;
@@ -284,10 +284,15 @@ export default {
     border-right: 6px solid rgba(0, 0, 0, 0.4);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .panels {
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
+        width: calc(100% - 36px);
+    }
+
+    .inner-panel:last-child {
+        width: 100% !important;
     }
 }
 
@@ -308,6 +313,11 @@ export default {
     border: 3px solid rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     padding: 24px;
+    width: 100%;
+}
+
+.inner-panel:last-child {
+    width: 50%;
 }
 
 .call-to-action {
