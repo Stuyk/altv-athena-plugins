@@ -327,8 +327,8 @@ export default {
 .markdown {
     position: relative;
     font-family: 'Roboto';
-    text-align: justify;
     min-height: 600px;
+    text-align: left !important;
 }
 
 @keyframes gradient {

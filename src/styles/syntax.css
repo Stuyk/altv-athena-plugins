@@ -6,10 +6,11 @@ astro-fragment h5,
 astro-fragment h6 {
     font-family: 'Barlow Semi Condensed', 'Roboto', 'Arial';
     color: #ffc107 !important;
-    padding-top: 0px;
-    margin-top: 0px;
-    margin-bottom: 6px;
     user-select: none;
+}
+
+astro-fragment h1:first-child {
+    margin-top: 0px !important;
 }
 
 astro-fragment h1 {
@@ -36,7 +37,6 @@ astro-fragment p {
     color: rgba(225, 225, 225, 1);
     user-select: none;
     font-size: 14px;
-    text-align: justify;
     max-width: calc(100% - 24px);
 }
 
@@ -56,6 +56,26 @@ astro-fragment a:hover {
     color: #64b5f6 !important;
 }
 
+table {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border-collapse: collapse;
+}
+
+th {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+td {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px rgba(255, 255, 255, 0.2);
+    padding: 6px;
+    box-sizing: border-box;
+}
+
 pre {
     display: flex;
     background: rgba(110, 166, 214, 0.1);
@@ -65,7 +85,7 @@ pre {
     font-size: 14px;
     padding: 12px;
     word-wrap: normal;
-    overflow-x: scroll;
+    overflow-x: auto;
     width: calc(100vw - 100px);
 }
 
