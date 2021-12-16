@@ -65,6 +65,8 @@ pre {
     font-size: 14px;
     padding: 12px;
     word-wrap: normal;
+    overflow-x: scroll;
+    width: calc(100vw - 100px);
 }
 
 code:not(pre > code) {

@@ -247,16 +247,7 @@ export default {
     display: flex;
     flex-direction: column;
     background-blend-mode: luminosity !important;
-    background: url('/assets/bg.png'), linear-gradient(-45deg, #377ac7, #4ff0ff, #377ac7, #4ff0ff);
-    background-repeat: repeat;
-    animation: gradient 80s ease infinite;
-}
-
-@media only screen and (max-width: 900px) {
-    .content-wrapper {
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-    }
+    width: 100vw;
 }
 
 .content-wrapper {
@@ -264,6 +255,7 @@ export default {
     position: relative;
     box-sizing: border-box !important;
     align-self: center;
+    width: 100vw;
 }
 
 .content {
@@ -276,8 +268,7 @@ export default {
     overflow-x: hidden;
     box-sizing: border-box;
     background: rgba(15, 15, 15, 1);
-    border-left: 6px solid rgba(0, 0, 0, 0.4);
-    border-right: 6px solid rgba(0, 0, 0, 0.4);
+    width: 100vw;
 }
 
 .panels {
