@@ -16,7 +16,8 @@
 
 .slideshow .slide {
     position: absolute;
-    min-width: 50%;
+    min-width: 10%;
+    width: 50%;
     max-width: 50%;
     min-height: 235px;
     max-height: 235px;

@@ -37,11 +37,14 @@ astro-fragment p {
     user-select: none;
     font-size: 14px;
     text-align: justify;
+    max-width: calc(100% - 24px);
 }
 
 astro-fragment ol {
     margin-top: 3px;
     margin-bottom: 3px;
+    list-style-type: disc;
+    padding: 0px;
 }
 
 astro-fragment a {
@@ -54,13 +57,14 @@ astro-fragment a:hover {
 }
 
 pre {
+    display: flex;
     background: rgba(110, 166, 214, 0.1);
-    width: 100%;
     border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 6px;
     box-sizing: border-box;
-    padding: 12px;
     font-size: 14px;
+    padding: 12px;
+    word-wrap: normal;
 }
 
 code:not(pre > code) {

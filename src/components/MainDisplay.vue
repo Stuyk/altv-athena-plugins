@@ -262,9 +262,6 @@ export default {
 .content-wrapper {
     display: flex;
     position: relative;
-    min-height: calc(100vh - 36px);
-    max-height: calc(100vh - 36px);
-    width: 80%;
     box-sizing: border-box !important;
     align-self: center;
 }
@@ -273,9 +270,8 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 36px);
-    max-height: calc(100vh - 36px);
-    width: 100%;
+    min-height: calc(100vh - 52px);
+    max-height: calc(100vh - 52px);
     overflow-y: scroll;
     overflow-x: hidden;
     box-sizing: border-box;
@@ -284,21 +280,10 @@ export default {
     border-right: 6px solid rgba(0, 0, 0, 0.4);
 }
 
-@media only screen and (max-width: 900px) {
-    .panels {
-        display: flex !important;
-        flex-direction: column !important;
-        width: calc(100% - 36px);
-    }
-
-    .inner-panel:last-child {
-        width: 100% !important;
-    }
-}
-
 .panels {
     position: relative;
-    display: flex;
+    display: grid;
+    flex-direction: row;
     padding-top: 28px;
     box-sizing: border-box;
     flex-grow: 1;
@@ -313,11 +298,6 @@ export default {
     border: 3px solid rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     padding: 24px;
-    width: 100%;
-}
-
-.inner-panel:last-child {
-    width: 50%;
 }
 
 .call-to-action {
