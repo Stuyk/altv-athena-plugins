@@ -24,6 +24,7 @@
     top: 15px;
     border-radius: 6px;
     background-size: cover;
+    background-position: 50% 50%;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -40,11 +41,11 @@
     0% {
         opacity: 0;
         min-width: 0px;
-        transform: translateX(100px);
+        transform: translateX(50%);
     }
     100% {
         opacity: 1;
-        min-width: 400px;
+        min-width: 50%;
         transform: translateX(0px);
     }
 }
@@ -52,18 +53,20 @@
 .slideshow .fade-out {
     animation: fade-out 0.5s ease-in;
     opacity: 0;
+    cursor: unset !important;
+    user-select: none !important;
 }
 
 @keyframes fade-out {
     0% {
         opacity: 1;
-        min-width: 400px;
+        min-width: 50%;
         transform: translateX(0px);
     }
     100% {
         opacity: 0;
-        min-width: 100px;
-        transform: translateX(100px);
+        min-width: 0%;
+        transform: translateX(50%);
     }
 }
 
@@ -99,7 +102,6 @@
     align-content: center;
     align-items: center;
     justify-items: center;
-    animation: fade-in 0.3s ease-in;
     cursor: zoom-out;
 }
 

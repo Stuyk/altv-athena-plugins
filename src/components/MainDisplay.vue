@@ -1,10 +1,10 @@
 <template>
     <div id="vue" class="main">
         <Header :hideSearch="true"></Header>
+        <div class="zoom" v-if="zoom" @click="handleZoom(null)">
+            <div class="zoom-image" :style="getSlideshowImage(-1)" />
+        </div>
         <div class="content-wrapper">
-            <div class="zoom" v-if="zoom" @click="handleZoom(null)">
-                <div class="zoom-image" :style="getSlideshowImage(-1)" />
-            </div>
             <div class="content">
                 <div class="slideshow ma-4">
                     <div
@@ -77,7 +77,7 @@ export default {
             search: '',
             imageIndex: 0,
             interval: null,
-            defaultSlide: 'https://i.imgur.com/nx4Pt4X.png',
+            defaultSlide: 'https://i.imgur.com/7QUmJI3.jpeg',
             images: []
         };
     },
