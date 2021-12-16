@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head>
+        <title>Athena API</title>
+        <link rel="stylesheet" href="../../../../assets/core.346cb1f3.css"><link rel="stylesheet" href="../../../../assets/Header.vue_vue_type_style_index_0_scoped_true_lang.754a8f50.css"><link rel="stylesheet" href="../../../../assets/MainDisplay.vue_vue_type_style_index_1_scoped_true_lang.a2c7d97c.css"><link rel="stylesheet" href="../../../../assets/athena-api.1d843820.css">
+    <script type="module" src="../../../../assets/athena-api.921fb95d.js"></script>
+
+
+</head>
+    <body>
+        <astro-root uid="ZX4v7A"><div id="vue" class="main" data-v-0e155dfa=""><div id="header" class="header-wrapper" data-v-0e155dfa="" data-v-1a251b85=""><div class="top" data-v-1a251b85=""><a class="header-text bolder pl-3" href="/search" data-v-1a251b85=""><img src="/favicon-32x32.png" height="25" width="25" class="pr-3" data-v-1a251b85=""><span data-v-1a251b85="">Athena Plugins</span></a><div class="header-right" data-v-1a251b85=""></div></div><!----></div><!----><div class="content-wrapper" data-v-0e155dfa=""><div class="content" data-v-0e155dfa=""><div class="slideshow ma-4" data-v-0e155dfa=""><div class="slide fade-in" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-0e155dfa=""></div><div class="slide slide-middle fade-in" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-0e155dfa=""></div><div class="slide fade-in" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-0e155dfa=""></div></div><div class="panels" data-v-0e155dfa=""><div class="inner-panel ma-4" lang="ts" data-v-0e155dfa=""><!--[--><astro-fragment><h1 id="athena-api">Athena API</h1><p>This feeds data from the Server to anyone who would like to access the endpoint. It’s a relatively simple plugin that is more data centric.</p><p>It is highly recommended that if you plan on using this plugin that you limit who can access the port <code data-astro-raw="">9090</code> by IP.</p><p><strong>You as the end-user are responsible for securing data.</strong></p><h1 id="get">GET</h1><p><code data-astro-raw="">:variable</code> means you provide the data to get the result. Everything is case sensitive.</p><p><em>* Some sensitive data removed from response.</em></p><h2 id="account-specific">Account Specific</h2><table>
+<thead>
+<tr>
+<th align="none">Request</th>
+<th align="none">Description</th>
+<th align="none">Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="none"><code data-astro-raw="">localhost:9090/accounts/:discord</code></td>
+<td align="none">Get Account</td>
+<td align="none"><code data-astro-raw="">&lt;Account&gt;</code>*</td>
+</tr>
+</tbody>
+</table><h2 id="player-specific">Player Specific</h2><table>
+<thead>
+<tr>
+<th align="none">Request</th>
+<th align="none">Description</th>
+<th align="none">Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="none"><code data-astro-raw="">localhost:9090/players/all</code></td>
+<td align="none">Get Players</td>
+<td align="none"><code data-astro-raw="">Array&lt;alt.Player&gt;</code></td>
+</tr>
+<tr>
+<td align="none"><code data-astro-raw="">localhost:9090/players/name/:name</code></td>
+<td align="none">Get Character by Name</td>
+<td align="none"><code data-astro-raw="">Character</code></td>
+</tr>
+<tr>
+<td align="none"><code data-astro-raw="">localhost:9090/players/discord/:discord</code></td>
+<td align="none">Get Characters by Discord ID</td>
+<td align="none"><code data-astro-raw="">Array&lt;Character&gt;</code></td>
+</tr>
+</tbody>
+</table><h2 id="vehicle-specific">Vehicle Specific</h2><table>
+<thead>
+<tr>
+<th align="none">Request</th>
+<th align="none">Description</th>
+<th align="none">Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="none"><code data-astro-raw="">localhost:9090/vehicles/all</code></td>
+<td align="none">Get Vehicles</td>
+<td align="none"><code data-astro-raw="">Array&lt;alt.Vehicle&gt;</code></td>
+</tr>
+<tr>
+<td align="none"><code data-astro-raw="">localhost:9090/vehicles/character/:id</code></td>
+<td align="none">Get Character Vehicles</td>
+<td align="none"><code data-astro-raw="">Array&lt;IVehicle&gt;</code></td>
+</tr>
+</tbody>
+</table><p>All <code data-astro-raw="">GET</code> Requests Return a JSON Response Object</p><pre class="language-ts"><code data-astro-raw="" class="language-ts"><span class="token punctuation">{</span>
+    <span class="token string">"version"</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+    <span class="token string">"data"</span><span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span>SomeObjectType<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span></code></pre><h1 id="installation">Installation</h1><p>Download that latest version of this archive.</p><p>Drag / drop <code data-astro-raw="">src</code> in the root directory of <code data-astro-raw="">Athena</code>.</p><p>Add the following to <code data-astro-raw="">src/core/server/plugins/imports.ts</code></p><pre class="language-ts"><code data-astro-raw="" class="language-ts"><span class="token keyword">import</span> <span class="token string">'./altv-athena-api/index'</span></code></pre><p>Run the following in a Terminal:</p><pre class="language-null"><code data-astro-raw="" class="language-null">npm i fastify</code></pre><h1 id="verification-of-installation">Verification of Installation</h1><p><img src="https://i.imgur.com/Tqa77vQ.png" alt=""></p><p>Open Browser and Visit</p><pre class="language-null"><code data-astro-raw="" class="language-null">localhost:9090</code></pre><h1 id="uninstallation">Uninstallation</h1><p>Delete the folder <code data-astro-raw="">src/core/server/plugins/altv-athena-api</code></p><p>Run the following in a Terminal:</p><pre class="language-null"><code data-astro-raw="" class="language-null">npm uninstall fastify</code></pre></astro-fragment><!--]--></div><div class="inner-panel ma-4" data-v-0e155dfa=""><a class="getter pa-3 bolder" href="https://github.com/Stuyk/altv-athena-api" target="_blank" rel="noopener noreferrer" data-v-0e155dfa="">GET PLUGIN</a><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-0e155dfa="">Author</div><span class="grey--text mr-2 subtitle-2" style="font-size:14px;" data-v-0e155dfa="">Stuyk</span><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-0e155dfa="">Discord</div><div class="grey--text subtitle-2" data-v-0e155dfa="">Add 'discord' to FrontMatter</div><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-0e155dfa="">Keywords</div><div class="grey--text text--darken-2 subtitle-2" data-v-0e155dfa="">free, server, utility, data</div></div></div></div></div></div></astro-root>
+    </body></html>
