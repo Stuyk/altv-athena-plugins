@@ -73,6 +73,7 @@ export default {
     },
     data() {
         return {
+            isUpdating: false,
             zoom: false,
             search: '',
             imageIndex: 0,
@@ -128,6 +129,11 @@ export default {
             });
         },
         async updateSlide() {
+            if (this.isUpdating) {
+                return;
+            }
+
+            this.isUpdating = true;
             for (let i = 0; i <= 2; i++) {
                 this.$refs[`slide${i}`].classList.remove('fade-in');
                 this.$refs[`slide${i}`].classList.add('fade-out');
@@ -142,17 +148,12 @@ export default {
 
             this.$nextTick(() => {
                 for (let i = 0; i <= 2; i++) {
-                    let timeout = 0;
-                    if (i !== 1) {
-                        timeout = 500;
-                    }
-
-                    setTimeout(() => {
-                        this.$refs[`slide${i}`].classList.add('fade-in');
-                        this.$refs[`slide${i}`].classList.remove('fade-out');
-                    }, timeout);
+                    this.$refs[`slide${i}`].classList.add('fade-in');
+                    this.$refs[`slide${i}`].classList.remove('fade-out');
                 }
             });
+
+            this.isUpdating = false;
         },
         setupImages() {
             const images = [...this.content.images];
@@ -245,10 +246,10 @@ export default {
 .main {
     display: flex;
     flex-direction: column;
-    background: rgba(10, 10, 10, 1);
-    background-image: url('/assets/bg.png');
+    background-blend-mode: luminosity !important;
+    background: url('/assets/bg.png'), linear-gradient(-45deg, #377ac7, #4ff0ff, #377ac7, #4ff0ff);
     background-repeat: repeat;
-    background-blend-mode: difference;
+    animation: gradient 80s ease infinite;
 }
 
 @media only screen and (max-width: 800px) {
@@ -281,6 +282,13 @@ export default {
     background: rgba(15, 15, 15, 1);
     border-left: 6px solid rgba(0, 0, 0, 0.4);
     border-right: 6px solid rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 800px) {
+    .panels {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .panels {
@@ -340,5 +348,17 @@ export default {
     font-family: 'Roboto';
     text-align: justify;
     min-height: 600px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 </style>
