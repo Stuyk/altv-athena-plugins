@@ -293,8 +293,7 @@ export default {
 
 .panels {
     position: relative;
-    display: grid;
-    grid-template-columns: 4fr 1fr;
+    display: flex;
     padding-top: 28px;
     box-sizing: border-box;
     flex-grow: 1;
@@ -329,6 +328,7 @@ export default {
     color: white !important;
     transition: all 0.0125s ease-in;
     box-shadow: 0px 5px rgba(20, 20, 20, 1);
+    text-align: center;
 }
 
 .getter:active {
