@@ -18,10 +18,10 @@
                     </span>
                 </div>
             </div>
-            <div class="premium overline pa-2 mt-3 mr-3 bolder" v-if="isPremium(result.keywords)">
+            <div class="premium overline pa-2 mt-3 mr-3 bolder amber--text" v-if="isPremium(result.keywords)">
                 ${{ result.price }}
             </div>
-            <div class="free overline pa-2 mt-3 mr-3 bolder" v-else>Free</div>
+            <div class="free overline pa-2 mt-3 mr-3 bolder green--text text--lighten-2" v-else>Free</div>
         </div>
         <div class="empty-space"></div>
     </div>
@@ -159,7 +159,7 @@ export default {
     width: 100%;
 }
 
-.details .premium,
+.premium,
 .free {
     position: relative;
     text-align: center;

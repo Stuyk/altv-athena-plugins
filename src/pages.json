@@ -22,6 +22,25 @@
 	},
 	{
 		"layout": "../../../../layouts/Main.astro",
+		"title": "Moderator Commands",
+		"description": "Adds the much needed in-game commands for moderators and administrators.",
+		"author": "Stuyk",
+		"version": "3.0.0+",
+		"images": [
+			"https://i.imgur.com/ScnIFEt.png"
+		],
+		"keywords": [
+			"free",
+			"server",
+			"system",
+			"utility"
+		],
+		"url": "https://github.com/Stuyk/athena-moderator-commands",
+		"discord": "stuyk#0001",
+		"path": "content/plugins/stuyk/moderator-commands"
+	},
+	{
+		"layout": "../../../../layouts/Main.astro",
 		"title": "Plant System",
 		"description": "Plant system which lets players place weed plants and also harvest them based on Athena's Interaction Controllers.",
 		"author": "Der Lord!",
@@ -37,6 +56,45 @@
 		"url": "https://github.com/Booster1212/AthenaPlantsystem",
 		"discord": "Der Lord!#6021",
 		"path": "content/plugins/derlord/plantsystem"
+	},
+	{
+		"layout": "../../../../layouts/Main.astro",
+		"title": "Vehicle Damage Plugin",
+		"description": "This Plugin saves the vehicle damage on wheels, windows and lights in the athena database.",
+		"author": "j0n4s",
+		"version": "3.0.0+",
+		"images": [
+			"https://i.imgur.com/0Z4VZnC.png"
+		],
+		"keywords": [
+			"premium",
+			"client",
+			"player",
+			"system"
+		],
+		"url": "https://mygp.gumroad.com/l/vehicledamage",
+		"price": "9.99",
+		"discord": "j0n4s#8301",
+		"path": "content/plugins/j0n4s/vehicledamage-plugin"
+	},
+	{
+		"layout": "../../../../layouts/Main.astro",
+		"title": "Interior Plugin",
+		"description": "This Plugin helps you to find an interior including position and ipl informations",
+		"author": "j0n4s",
+		"version": "3.0.0+",
+		"images": [
+			"https://i.imgur.com/K4QjdzE.png"
+		],
+		"keywords": [
+			"free",
+			"client",
+			"server",
+			"data"
+		],
+		"url": "https://github.com/jonasesser/altv-athena-plugin-interior",
+		"discord": "j0n4s#8301",
+		"path": "content/plugins/j0n4s/interior-plugin"
 	},
 	{
 		"layout": "../../../../layouts/Main.astro",
@@ -57,43 +115,5 @@
 		"url": "https://github.com/Booster1212/AthenaDoorlock",
 		"discord": "Der Lord!#6021",
 		"path": "content/plugins/derlord/doorsystem"
-	},
-	{
-		"layout": "../../../../layouts/Main.astro",
-		"title": "Moderator Commands",
-		"description": "Adds the much needed in-game commands for moderators and administrators.",
-		"author": "Stuyk",
-		"version": "3.0.0+",
-		"images": [
-			"https://i.imgur.com/ScnIFEt.png"
-		],
-		"keywords": [
-			"free",
-			"server",
-			"system",
-			"utility"
-		],
-		"url": "https://github.com/Stuyk/athena-moderator-commands",
-		"discord": "stuyk#0001",
-		"path": "content/plugins/stuyk/moderator-commands"
-	},
-	{
-		"layout": "../../../../layouts/Main.astro",
-		"title": "Interior Plugin",
-		"description": "This Plugin helps you to find an interior including position and ipl informations",
-		"author": "j0n4s",
-		"version": "3.0.0+",
-		"images": [
-			"https://i.imgur.com/K4QjdzE.png"
-		],
-		"keywords": [
-			"free",
-			"client",
-			"server",
-			"data"
-		],
-		"url": "https://github.com/jonasesser/altv-athena-plugin-interior",
-		"discord": "j0n4s#8301",
-		"path": "content/plugins/j0n4s/interior-plugin"
 	}
 ]
