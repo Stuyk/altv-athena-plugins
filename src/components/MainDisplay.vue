@@ -52,7 +52,7 @@
                         <span class="grey--text mr-2 subtitle-2" style="font-size: 14px">{{ content.author }}</span>
                         <div class="grey--text overline mb-2 mt-6 text--darken-1">Discord</div>
                         <div class="grey--text subtitle-2">
-                            {{ content.disord ? content.discord : "Add 'discord' to FrontMatter" }}
+                            {{ content.discord ? content.discord : "Add 'discord' to FrontMatter" }}
                         </div>
                         <div class="grey--text overline mb-2 mt-6 text--darken-1">Keywords</div>
                         <div class="grey--text text--darken-2 subtitle-2">{{ content.keywords.join(', ') }}</div>
