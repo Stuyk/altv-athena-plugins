@@ -1,7 +1,6 @@
 {
-    "name": "@example/starter",
-    "version": "0.0.1",
-    "private": true,
+    "name": "altv-athena-plugins",
+    "version": "1.0.0",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",

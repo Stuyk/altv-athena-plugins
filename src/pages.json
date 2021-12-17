@@ -1,25 +1,6 @@
 [
 	{
 		"layout": "../../../../layouts/Main.astro",
-		"title": "Interior Plugin",
-		"description": "This Plugin helps you to find an interior including position and ipl informations",
-		"author": "j0n4s",
-		"version": "3.0.0+",
-		"images": [
-			"https://i.imgur.com/K4QjdzE.png"
-		],
-		"keywords": [
-			"free",
-			"client",
-			"server",
-			"data"
-		],
-		"url": "https://github.com/jonasesser/altv-athena-plugin-interior",
-		"discord": "j0n4s#8301",
-		"path": "content/plugins/j0n4s/interior-plugin"
-	},
-	{
-		"layout": "../../../../layouts/Main.astro",
 		"title": "API Service",
 		"description": "A REST service for Athena internal gamemode. Can be used to get various player data.",
 		"author": "Stuyk",
@@ -59,6 +40,26 @@
 	},
 	{
 		"layout": "../../../../layouts/Main.astro",
+		"title": "Door Lock System",
+		"description": "Door system which enables you to lock/unlock door based on a player or faction.",
+		"author": "Der Lord!",
+		"version": "3.0.0+",
+		"images": [
+			"https://user-images.githubusercontent.com/82890183/136729801-b86dc411-56e7-4d90-b8fb-a308143823b4.png"
+		],
+		"keywords": [
+			"free",
+			"player",
+			"system",
+			"streamer",
+			"client"
+		],
+		"url": "https://github.com/Booster1212/AthenaDoorlock",
+		"discord": "Der Lord!#6021",
+		"path": "content/plugins/derlord/doorsystem"
+	},
+	{
+		"layout": "../../../../layouts/Main.astro",
 		"title": "Moderator Commands",
 		"description": "Adds the much needed in-game commands for moderators and administrators.",
 		"author": "Stuyk",
@@ -78,22 +79,21 @@
 	},
 	{
 		"layout": "../../../../layouts/Main.astro",
-		"title": "Door Lock System",
-		"description": "Door system which enables you to lock/unlock door based on a player or faction.",
-		"author": "Der Lord!",
+		"title": "Interior Plugin",
+		"description": "This Plugin helps you to find an interior including position and ipl informations",
+		"author": "j0n4s",
 		"version": "3.0.0+",
 		"images": [
-			"https://user-images.githubusercontent.com/82890183/136729801-b86dc411-56e7-4d90-b8fb-a308143823b4.png"
+			"https://i.imgur.com/K4QjdzE.png"
 		],
 		"keywords": [
 			"free",
-			"player",
-			"system",
-			"streamer",
-			"client"
+			"client",
+			"server",
+			"data"
 		],
-		"url": "https://github.com/Booster1212/AthenaDoorlock",
-		"discord": "Der Lord!#6021",
-		"path": "content/plugins/derlord/doorsystem"
+		"url": "https://github.com/jonasesser/altv-athena-plugin-interior",
+		"discord": "j0n4s#8301",
+		"path": "content/plugins/j0n4s/interior-plugin"
 	}
 ]
