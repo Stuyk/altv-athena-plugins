@@ -1,43 +1,42 @@
-# Welcome to [Astro](https://astro.build)
+# Athena Framework Plugins Website
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/starter)
+Yes, it is now an open source website so you can also contribute if you don't like something you see. This automatically builds based on changes in the `altv-athena-plugins-md` repository and deploys your `plugin` to be displayed.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+https://plugins.athenaframework.com/
 
-## 🚀 Project Structure
+## Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+* [Astro](https://astro.build)
+* [Vue 3](https://vuejs.org)
 
-```
-/
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Tour.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Where do the Pages come from?
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+There's a repository that this website uses to construct all of its content.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+You can visit that here [https://github.com/Stuyk/altv-athena-plugins-md](https://github.com/Stuyk/altv-athena-plugins-md)
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
+| Command           | Action                                                 |
+| :---------------- | :----------------------------------------------------- |
+| `npm install`     | Installs dependencies                                  |
+| `npm run dev`     | Starts local dev server at `localhost:3000`            |
+| `npm run build`   | Update Submodules, Build, and Deploy to `dist` folder. |
+| `npm run preview` | Preview your build locally, before deploying           |
 
-## 👀 Want to learn more?
+## Pipeline
 
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+* Create a PR in `altv-athena-plugins-md`
+* Sends Workflow action to `altv-athena-plugins`
+* Builds the latest version of the WebSite
+* Digital Ocean listens for Code Changes in `dist` branch.
+
+## Performance
+
+* Currently builds roughly 180 pages in 60s
+* Roughly 1800 pages in 10 minutes.
+* Everything is static.
+
+_Should be sufficient for forseeable future._
