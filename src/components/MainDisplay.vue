@@ -2,7 +2,7 @@
     <div id="vue" class="main">
         <Header :hideSearch="true"></Header>
         <div class="zoom" v-if="zoom" @click="handleZoom(null)">
-            <div class="zoom-image" :style="getSlideshowImage(-1)" />
+            <img class="zoom-image" :src="zoom" />
         </div>
         <div class="content-wrapper">
             <div class="content">
@@ -101,10 +101,6 @@ export default {
             return this.images[index];
         },
         getSlideshowImage(index) {
-            if (index <= -1) {
-                return `background-image: url('${this.zoom}');`;
-            }
-
             if (this.images[index] === 'empty') {
                 return `background-image: url('${this.defaultSlide}');`;
             }

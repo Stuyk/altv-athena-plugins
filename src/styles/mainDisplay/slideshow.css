@@ -59,7 +59,7 @@
     background: rgba(0, 0, 0, 0.9);
     z-index: 99;
     min-width: 100vw;
-    height: 100%;
+    height: 100vh;
     left: 0;
     backdrop-filter: blur(6px);
     justify-content: center;
@@ -70,11 +70,11 @@
 }
 
 .zoom-image {
-    width: 90vw;
-    height: 90vh;
-    background-size: cover;
+    max-width: 90vw;
+    object-fit: contain;
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.2);
+    user-select: none !important;
 }
 
 .slide-ctrl-left {
