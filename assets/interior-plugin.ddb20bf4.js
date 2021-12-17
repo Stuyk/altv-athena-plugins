@@ -35,7 +35,8 @@ let interiorNamesByCat = GpInteriors.getInteriorNamesByCategory(GpInteriors_Cate
 // Get Interior position by name\r
 let position = GpInteriors.getInteriorPosition(interior.Name);  //returns alt.Vector3\r
 let ipl = GpInteriors.getInteriorIPL(interior.Name); //returns IPL name to be load or null\r
-\`\`\``,html:`<h1 id="interior-plugin">Interior Plugin</h1>
+\`\`\`\r
+`,html:`<h1 id="interior-plugin">Interior Plugin</h1>
 <p>This Plugin helps you to find an interior including position and ipl informations.\r
 You can use it ingame as admin or for development as interior database.</p>
 <h1 id="installation-instructions">Installation Instructions</h1>
