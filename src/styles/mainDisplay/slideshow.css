@@ -22,54 +22,16 @@
     max-width: 50%;
     min-height: 235px;
     max-height: 235px;
-    box-shadow: 0px 2px 10px black;
     top: 15px;
     border-radius: 6px;
     background-size: cover;
-    background-position: 50% 50%;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(80, 80, 80, 1);
+    object-fit: cover;
 }
 
 .slide:hover {
     cursor: zoom-in;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-}
-
-.slideshow .fade-in {
-    animation: fade-in 0.5s ease-in;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        min-width: 0px;
-        transform: translateX(50%);
-    }
-    100% {
-        opacity: 1;
-        min-width: 50%;
-        transform: translateX(0px);
-    }
-}
-
-.slideshow .fade-out {
-    animation: fade-out 0.5s ease-in;
-    opacity: 0;
-    cursor: unset !important;
-    user-select: none !important;
-}
-
-@keyframes fade-out {
-    0% {
-        opacity: 1;
-        min-width: 50%;
-        transform: translateX(0px);
-    }
-    100% {
-        opacity: 0;
-        min-width: 0%;
-        transform: translateX(50%);
-    }
+    border: 3px solid rgba(150, 150, 150, 1);
 }
 
 .slideshow .slide-middle {
@@ -82,12 +44,12 @@
 }
 
 .slideshow .slide:first-child {
-    left: 15px;
+    left: 62px;
     z-index: 24;
 }
 
 .slideshow .slide:last-child {
-    right: 15px;
+    right: 62px;
     z-index: 24;
 }
 
@@ -108,9 +70,34 @@
 }
 
 .zoom-image {
-    width: 50%;
-    height: 50%;
+    width: 90vw;
+    height: 90vh;
     background-size: cover;
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.slide-ctrl-left {
+    font-family: 'Consolas';
+    position: absolute;
+    left: 32px;
+    transform: scaleX(3) scaleY(5);
+    padding-top: 6px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.slide-ctrl-right {
+    font-family: 'Consolas';
+    position: absolute;
+    right: 32px;
+    transform: scaleX(3) scaleY(5);
+    padding-top: 6px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.slide-ctrl-left:hover,
+.slide-ctrl-right:hover {
+    opacity: 1;
 }

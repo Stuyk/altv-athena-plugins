@@ -7,24 +7,16 @@
         <div class="content-wrapper">
             <div class="content">
                 <div class="slideshow">
+                    <div class="slide" @click="handleZoom(getImage(2))" ref="slide0" :style="getSlideshowImage(2)" />
+                    <div class="slide-ctrl-left bolder white--text" @click="prevSlide">&lt;</div>
                     <div
-                        class="slide fade-in"
-                        @click="handleZoom(getImage(2))"
-                        ref="slide0"
-                        :style="getSlideshowImage(2)"
-                    />
-                    <div
-                        class="slide slide-middle fade-in"
+                        class="slide slide-middle"
                         @click="handleZoom(getImage(0))"
                         ref="slide1"
                         :style="getSlideshowImage(0)"
                     />
-                    <div
-                        class="slide fade-in"
-                        ref="slide2"
-                        @click="handleZoom(getImage(1))"
-                        :style="getSlideshowImage(1)"
-                    />
+                    <div class="slide-ctrl-right bolder white--text" @click="nextSlide">&gt;</div>
+                    <div class="slide" ref="slide2" @click="handleZoom(getImage(1))" :style="getSlideshowImage(1)" />
                 </div>
                 <div class="panels">
                     <div class="inner-panel ma-4" lang="ts">
@@ -102,7 +94,6 @@ export default {
     // testing whatever the fuck
     methods: {
         getImage(index) {
-            console.log(index);
             if (this.images[index] === null || this.images[index] === undefined) {
                 return this.defaultSlide;
             }
@@ -114,14 +105,17 @@ export default {
                 return `background-image: url('${this.zoom}');`;
             }
 
-            if (!this.images[index]) {
+            if (this.images[index] === 'empty') {
                 return `background-image: url('${this.defaultSlide}');`;
             }
 
             return `background-image: url('${this.getImage(index)}');`;
         },
         handleZoom(url) {
-            console.log(url);
+            if (url && url === 'empty') {
+                url = this.defaultSlide;
+            }
+
             this.zoom = this.zoom ? null : url;
         },
         async sleep(ms) {
@@ -131,55 +125,40 @@ export default {
                 }, ms);
             });
         },
-        async updateSlide() {
-            if (this.isUpdating) {
-                return;
-            }
-
-            this.isUpdating = true;
-            for (let i = 0; i <= 2; i++) {
-                this.$refs[`slide${i}`].classList.remove('fade-in');
-                this.$refs[`slide${i}`].classList.add('fade-out');
-            }
-
-            const images = [...this.images];
-            const endImage = images.pop();
-            images.unshift(endImage);
-            this.images = images;
-
-            await this.sleep(1500);
-
-            this.$nextTick(() => {
-                for (let i = 0; i <= 2; i++) {
-                    this.$refs[`slide${i}`].classList.add('fade-in');
-                    this.$refs[`slide${i}`].classList.remove('fade-out');
-                }
-            });
-
-            this.isUpdating = false;
-        },
         setupImages() {
             const images = [...this.content.images];
-            if (images.length <= 1) {
-                images.push(null);
-                images.push(null);
+            if (images.length === 0) {
+                images.push('empty');
+                images.push('empty');
+                images.push('empty');
+            }
+
+            if (images.length === 1) {
+                images.push('empty');
+                images.push('empty');
+            }
+
+            if (images.length === 2) {
+                images.push('empty');
             }
 
             this.images = images;
-        }
-    },
-    watch: {
-        zoom() {
-            console.log('Toggled Image Zoom');
+        },
+        prevSlide() {
+            const images = [...this.images];
+            const removed = images.pop();
+            images.unshift(removed);
+            this.images = images;
+        },
+        nextSlide() {
+            const images = [...this.images];
+            const removed = images.shift();
+            images.push(removed);
+            this.images = images;
         }
     },
     mounted() {
         this.setupImages();
-
-        this.interval = setInterval(() => {
-            this.updateSlide();
-        }, 8000);
-
         console.log('[Vue] -> Mounted App.vue');
     },
     unmounted() {
