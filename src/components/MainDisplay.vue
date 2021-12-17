@@ -6,7 +6,7 @@
         </div>
         <div class="content-wrapper">
             <div class="content">
-                <div class="slideshow ma-4">
+                <div class="slideshow">
                     <div
                         class="slide fade-in"
                         @click="handleZoom(getImage(2))"
@@ -66,6 +66,8 @@
 <script>
 import Header from './Header.vue';
 
+const test = 5;
+
 export default {
     name: 'MainDisplay',
     components: {
@@ -97,6 +99,7 @@ export default {
             return `background-image: url('${this.content.images[this.imageIndex]}');`;
         }
     },
+    // testing whatever the fuck
     methods: {
         getImage(index) {
             console.log(index);
@@ -250,47 +253,6 @@ export default {
     width: 100vw;
 }
 
-.content-wrapper {
-    display: flex;
-    position: relative;
-    box-sizing: border-box !important;
-    align-self: center;
-    width: 100vw;
-}
-
-.content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 52px);
-    max-height: calc(100vh - 52px);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    background: rgba(15, 15, 15, 1);
-    width: 100vw;
-}
-
-.panels {
-    position: relative;
-    display: grid;
-    flex-direction: row;
-    padding-top: 28px;
-    box-sizing: border-box;
-    flex-grow: 1;
-    padding-bottom: 12px;
-}
-
-.inner-panel {
-    display: flex;
-    flex-direction: column;
-    background: rgba(5, 5, 5, 1);
-    border-radius: 6px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    box-sizing: border-box;
-    padding: 24px;
-}
-
 .call-to-action {
     display: flex;
     flex-direction: column;
@@ -325,10 +287,9 @@ export default {
 }
 
 .markdown {
-    position: relative;
     font-family: 'Roboto';
     min-height: 600px;
-    text-align: left !important;
+    /* text-align: left !important; */
 }
 
 @keyframes gradient {
@@ -341,5 +302,51 @@ export default {
     100% {
         background-position: 0% 50%;
     }
+}
+
+@media only screen and (max-width: 1280px) {
+    .content-wrapper {
+        display: flex !important;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .panels {
+        display: flex !important;
+        flex-direction: column;
+    }
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 20vw 60vw 20vw;
+    min-height: calc(100vh - 52px);
+    max-height: calc(100vh - 52px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.content {
+    display: block;
+    grid-column-start: 2;
+}
+
+.panels {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-top: 32px !important;
+    background: rgba(15, 15, 15, 1);
+    border-left: 2px solid rgba(25, 25, 25, 1);
+    border-right: 2px solid rgba(25, 25, 25, 1);
+}
+
+.inner-panel {
+    display: flex;
+    flex-direction: column;
+    background: rgba(32, 32, 32, 1);
+    border-radius: 6px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    padding: 24px;
 }
 </style>

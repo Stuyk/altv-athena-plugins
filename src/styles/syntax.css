@@ -9,7 +9,10 @@ astro-fragment h6 {
     user-select: none;
 }
 
-astro-fragment h1:first-child {
+astro-fragment h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child {
     margin-top: 0px !important;
 }
 
@@ -57,40 +60,43 @@ astro-fragment a:hover {
 }
 
 table {
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(25, 25, 25, 1);
+    background: rgba(60, 60, 60, 1);
     border-collapse: collapse;
 }
 
 th {
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid #191919;
+    opacity: 0.4;
+    font-weight: 500;
     text-align: left;
     padding: 6px;
     box-sizing: border-box;
 }
 
 td {
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 2px rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(25, 25, 25, 1);
     padding: 6px;
     box-sizing: border-box;
+    color: rgba(200, 200, 200, 1);
 }
 
 pre {
-    display: flex;
-    background: rgba(110, 166, 214, 0.1);
+    background: rgb(28, 32, 34);
     border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 6px;
     box-sizing: border-box;
     font-size: 14px;
     padding: 12px;
-    word-wrap: normal;
+    word-wrap: break-word;
+    white-space: pre-wrap;
     overflow-x: auto;
-    width: calc(100vw - 100px);
+    width: 100%;
+    color: rgb(217, 108, 116);
 }
 
 code:not(pre > code) {
-    background: rgba(110, 166, 214, 0.1);
+    background: rgb(28, 32, 34);
     font-size: 14px;
     padding: 3px;
     border-radius: 6px;
@@ -180,16 +186,32 @@ code:not(pre > code) {
     color: hsla(var(--color-green), 1);
 }
 
+.token.constant,
+.token.number {
+    color: rgb(255, 166, 0);
+}
+
 .token.keyword {
-    color: #ff657c;
+    color: rgb(218, 110, 218);
     font-style: italic;
 }
 
-.token.operator {
-    color: hsla(var(--color-gray-70), 1);
+.token.punctuation {
+    color: rgb(255, 255, 0) !important;
 }
 
-.token.attr-value .token.attr-equals,
-.token.punctuation {
-    color: hsla(var(--color-gray-80), 1);
+.token.operator {
+    color: rgb(37, 187, 207);
+}
+
+.token.comment {
+    color: rgb(93, 99, 112);
+}
+
+.token.string {
+    color: rgb(155, 196, 123);
+}
+
+#text {
+    padding-left: 6px;
 }

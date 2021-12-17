@@ -1,6 +1,6 @@
 <template>
-    <div id="vue" class="search pa-8">
-        <div class="result mb-8" v-for="(result, index) in pages" :key="index" @click="updatePath(result.path)">
+    <div id="vue" class="search">
+        <div class="result" v-for="(result, index) in pages" :key="index" @click="updatePath(result.path)">
             <div class="img-wrapper">
                 <div class="img" :style="getImageStyle(result.images[0])" />
             </div>
@@ -65,22 +65,6 @@ export default {
     overflow-y: scroll;
     overflow-x: hidden;
     box-sizing: border-box;
-    background-blend-mode: luminosity !important;
-    background: url('/assets/bg.png'), linear-gradient(-45deg, #377ac7, #4ff0ff, #377ac7, #4ff0ff);
-    background-repeat: repeat;
-    animation: gradient 80s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 .search .result {
@@ -89,14 +73,13 @@ export default {
     flex-direction: row;
     min-height: 150px;
     max-height: 150px;
-    border: 2px solid rgba(35, 35, 35, 1);
-    border-radius: 6px;
+    border-bottom: 2px solid rgba(35, 35, 35, 1);
     background: rgba(15, 15, 15, 1);
     box-sizing: border-box;
     overflow: hidden;
     transition: all 0.1s ease-in;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
     padding: 12px;
+    border-left: 6px solid rgba(255, 255, 255, 0) !important;
 }
 
 .search .result:hover > .details > .name {
@@ -114,10 +97,9 @@ export default {
 }
 
 .search .result:hover {
-    /* border: 2px solid #2196F3 !important; */
+    border-left: 6px solid rgba(255, 255, 255, 0.2) !important;
     background: rgba(25, 25, 25, 1);
     cursor: pointer;
-    /* box-shadow: 0px 0px 5px #2196F3; */
 }
 
 .search .result .img {
@@ -193,6 +175,7 @@ export default {
 }
 
 .empty-space {
-    min-height: 12px;
+    min-height: 150px;
+    min-width: 100%;
 }
 </style>
