@@ -3,19 +3,37 @@ import MainSearch from '../components/MainSearch.vue';
 import pages from '../pages.json'
 
 const { content = {} } = Astro.props;
-const currentPage = Astro.request.url.pathname;
+const CURRENT_PATH = Astro.request.url.href;
+const FULL_TITLE = 'Athena Framework Plugins';
+const FULL_DESC = "Plugins for the Athena Roleplay Framework for GTA V. These are user submitted free or premium plugins to help create a Roleplay Server for GTA V.";
+const FIRST_IMAGE = 'https://i.imgur.com/RtZJR0d.jpeg';
 ---
 
 <html>
     <head>
         <title>{content.title}</title>
         <link rel="stylesheet" href={Astro.resolve('../styles/core.css')}>
-        <meta name="title" content="Athena Framework Plugins">
-        <meta name="description" content="Plugins for the Athena Roleplay Framework for GTA V. These are user submitted free or premium plugins to help create a Roleplay Server for GTA V.">
+        <meta name="title" content={FULL_TITLE}>
+        <meta name="description" content={FULL_DESC}>
         <meta name="keywords" content="gtav roleplay script, gta 5 rp scripts, gta rp scripts, gta v rp server scripts, gta 5 roleplay server script, gta v roleplay ideas, gta v script, fivem esx full pack, fivem best rp servers, esx script, esx, fivem leaks hub, fivem leaks hud, fivem german leak discord">
         <meta name="robots" content="index, follow">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="English">
+
+         <!-- Facebook Meta Tags -->
+        <meta property="og:url" content={CURRENT_PATH}>
+        <meta property="og:type" content="website">
+        <meta property="og:title" content={FULL_TITLE}>
+        <meta property="og:description" content={FULL_DESC}>
+        <meta property="og:image" content={FIRST_IMAGE}>
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content={FIRST_IMAGE}>
+        <meta property="twitter:domain" content={CURRENT_PATH}>
+        <meta property="twitter:url" content={CURRENT_PATH}>
+        <meta name="twitter:title" content={FULL_TITLE}>
+        <meta name="twitter:description" content={FULL_DESC}>
+        <meta name="twitter:image" content={FIRST_IMAGE}>
     </head>
     <body>
         <MainSearch client:load pages={pages}>
