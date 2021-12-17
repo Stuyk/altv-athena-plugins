@@ -1,6 +1,6 @@
 const glob = require('glob');
-const fs = require('fs')
-const fm = require('front-matter')
+const fs = require('fs');
+const fm = require('front-matter');
 const path = require('path');
 
 const KEYWORDS = {
@@ -17,13 +17,30 @@ const KEYWORDS = {
     TOOL: 'tool',
     UTILITY: 'utility',
     VEHICLE: 'vehicle',
-    VOICE: 'voice',
-}
+    VOICE: 'voice'
+};
 
 const pages = [];
 
+function shuffle(array) {
+    let currentIndex = array.length,
+        randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
+
 glob('src/pages/content/plugins/**/*.md', (err, _files) => {
-    for(let i = 0; i < _files.length; i++) {
+    for (let i = 0; i < _files.length; i++) {
         const matter = fm(fs.readFileSync(_files[i], 'utf-8'));
         const attributes = matter.attributes;
 
@@ -72,7 +89,7 @@ glob('src/pages/content/plugins/**/*.md', (err, _files) => {
         const values = Object.values(KEYWORDS);
         let validKeywords = true;
 
-        for(let i = 0; i < attributes.keywords.length; i++) {
+        for (let i = 0; i < attributes.keywords.length; i++) {
             attributes.keywords[i] = attributes.keywords[i].toLowerCase();
             if (!values.includes(attributes.keywords[i])) {
                 console.warn(`Invalid keyword ${attributes.keywords[i]} for: ${_files[i]}`);
@@ -98,5 +115,6 @@ glob('src/pages/content/plugins/**/*.md', (err, _files) => {
         pages.push(attributes);
     }
 
-    fs.writeFileSync(path.join(process.cwd(), 'src/pages.json'), JSON.stringify(pages, null, '\t'));
+    const shuffledArray = shuffle(pages);
+    fs.writeFileSync(path.join(process.cwd(), 'src/pages.json'), JSON.stringify(shuffledArray, null, '\t'));
 });
