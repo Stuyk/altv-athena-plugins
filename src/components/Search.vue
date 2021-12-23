@@ -18,10 +18,15 @@
                     </span>
                 </div>
             </div>
-            <div class="premium overline pa-2 mt-3 mr-3 bolder amber--text" v-if="isPremium(result.keywords)">
-                ${{ result.price }}
+            <div class="upper-right-result">
+                <div class="free overline pa-2 mt-3 mr-3 bolder cyan--text" :style="getVersionStyle(result.version)">
+                    v{{ result.version }}
+                </div>
+                <div class="premium overline pa-2 mt-3 mr-3 bolder amber--text" v-if="isPremium(result.keywords)">
+                    ${{ result.price }}
+                </div>
+                <div class="free overline pa-2 mt-3 mr-3 bolder green--text text--lighten-2" v-else>Free</div>
             </div>
-            <div class="free overline pa-2 mt-3 mr-3 bolder green--text text--lighten-2" v-else>Free</div>
         </div>
         <div class="empty-space"></div>
     </div>
@@ -37,6 +42,13 @@ export default {
         }
     },
     methods: {
+        getVersionStyle(version) {
+            if (version.includes('2.0')) {
+                return 'color: #EF5350 !important;';
+            }
+
+            return '';
+        },
         getImageStyle(url) {
             return `background-image: url('${url}');`;
         },
@@ -159,6 +171,14 @@ export default {
     width: 100%;
 }
 
+.upper-right-result {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -12px;
+    right: -12px;
+}
+
 .premium,
 .free {
     position: relative;
@@ -170,8 +190,6 @@ export default {
     border: 2px solid rgba(255, 255, 255, 0.3);
     transition: all 0.1s ease-in;
     max-height: 32px;
-    top: -12px;
-    right: -12px;
 }
 
 .empty-space {
