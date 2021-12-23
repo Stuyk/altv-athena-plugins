@@ -1,11 +1,18 @@
 <template>
     <div id="header" class="header-wrapper">
-        <div class="top">
-            <a class="header-text bolder pl-3" href="/search">
+        <div class="top split space-between">
+            <a class="header-text bolder pl-4" href="/search">
                 <img src="/favicon-32x32.png" height="25" width="25" class="pr-3" />
                 <span>Athena Plugins</span>
             </a>
-            <div class="header-right"></div>
+            <div class="header-right pr-4">
+                <a class="header-link pr-4" href="https://athenaframework.com/" title="Home">Home</a>
+                <a class="header-link pr-4" href="https://athena.stuyk.com/" title="Docs">Docs</a>
+                <a class="header-link pr-4" href="https://discord.com/invite/pZvbJmKN8Y" title="Discord">Discord</a>
+                <a class="header-link" href="https://github.com/Stuyk/altv-athena-plugins-md" title="Post">
+                    Post Plugin
+                </a>
+            </div>
         </div>
         <div class="bottom pb-4 pl-3 pr-3" v-if="!hideSearch">
             <input
@@ -108,5 +115,18 @@ export default {
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
+}
+
+.header-link {
+    font-family: 'Roboto', 'Arial';
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    transition: all 0.1s ease-in;
+}
+
+.header-link:hover {
+    cursor: pointer;
+    color: #2196f3;
 }
 </style>
