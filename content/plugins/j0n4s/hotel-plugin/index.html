@@ -1,0 +1,84 @@
+<!DOCTYPE html><html><head>
+        <title>Athena Plugins - Hotel Plugin by j0n4s</title>
+        <link rel="stylesheet" href="../../../../assets/core.346cb1f3.css"><link rel="stylesheet" href="../../../../assets/Header.vue_vue_type_style_index_0_scoped_true_lang.74739985.css"><link rel="stylesheet" href="../../../../assets/MainDisplay.vue_vue_type_style_index_1_scoped_true_lang.3ee87c15.css"><link rel="stylesheet" href="../../../../assets/plantsystem.120097bc.css">
+        <meta name="title" content="Athena Plugins - Hotel Plugin by j0n4s">
+        <meta name="description" content="The Hotel Plugin adds a hotel function to Athena's Interior System.">
+        <meta name="keywords" content="gtav roleplay script, gta 5 rp scripts, gta rp scripts, gta v rp server scripts, gta 5 roleplay server script, gta v roleplay ideas, gta v script, fivem esx full pack, fivem best rp servers, esx script, esx, fivem leaks hub, fivem leaks hud, fivem german leak discord">
+        <meta name="robots" content="index, follow">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="language" content="English">
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="http://localhost:3000/content/plugins/j0n4s/hotel-plugin">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Athena Plugins - Hotel Plugin by j0n4s">
+        <meta property="og:description" content="The Hotel Plugin adds a hotel function to Athena's Interior System.">
+        <meta property="og:image" content="https://i.imgur.com/NOBWMXT.png">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="https://i.imgur.com/NOBWMXT.png">
+        <meta property="twitter:domain" content="http://localhost:3000/content/plugins/j0n4s/hotel-plugin">
+        <meta property="twitter:url" content="http://localhost:3000/content/plugins/j0n4s/hotel-plugin">
+        <meta name="twitter:title" content="Athena Plugins - Hotel Plugin by j0n4s">
+        <meta name="twitter:description" content="The Hotel Plugin adds a hotel function to Athena's Interior System.">
+        <meta name="twitter:image" content="https://i.imgur.com/NOBWMXT.png">
+    <script type="module" src="../../../../assets/hotel-plugin.5e2bf43f.js"></script>
+
+
+</head>
+    <body>
+        <astro-root uid="1aGyxB"><div id="vue" class="main" data-v-7eac4949=""><div id="header" class="header-wrapper" data-v-7eac4949="" data-v-16a46f9c=""><div class="top split space-between" data-v-16a46f9c=""><a class="header-text bolder pl-4" href="/search" data-v-16a46f9c=""><img src="/favicon-32x32.png" height="25" width="25" class="pr-3" data-v-16a46f9c=""><span data-v-16a46f9c="">Athena Plugins</span></a><div class="header-right pr-4" data-v-16a46f9c=""><a class="header-link pr-4" href="https://athenaframework.com/" title="Home" data-v-16a46f9c="">Home</a><a class="header-link pr-4" href="https://athena.stuyk.com/" title="Docs" data-v-16a46f9c="">Docs</a><a class="header-link pr-4" href="https://discord.com/invite/pZvbJmKN8Y" title="Discord" data-v-16a46f9c="">Discord</a><a class="header-link" href="https://github.com/Stuyk/altv-athena-plugins-md" title="Post" data-v-16a46f9c=""> Post Plugin </a></div></div><!----></div><!----><div class="content-wrapper" data-v-7eac4949=""><div class="content" data-v-7eac4949=""><div class="slideshow" data-v-7eac4949=""><div class="slide" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-7eac4949=""></div><div class="slide-ctrl-left bolder white--text" data-v-7eac4949="">&lt;</div><div class="slide slide-middle" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-7eac4949=""></div><div class="slide-ctrl-right bolder white--text" data-v-7eac4949="">&gt;</div><div class="slide" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-7eac4949=""></div></div><div class="panels" data-v-7eac4949=""><div class="inner-panel ma-4" lang="ts" data-v-7eac4949=""><!--[--><astro-fragment><h1 id="hotel-plugin-premium">Hotel Plugin Premium</h1><p>The Hotel Plugin adds a hotel function to Athena’s Interior System. Administrators can create hotels with any number of apartments.
+The hotels can be offered for sale and the apartments can be rented.</p><p>Feature overview:</p><ul>
+<li>Configrure rent price per appartment/unit</li>
+<li>Configure Hotel contact informations</li>
+<li>Payment System</li>
+<li>Rent a appartment</li>
+<li>Moveout from appartment</li>
+<li>Storage System</li>
+<li>Reception in Hotel Lobby</li>
+</ul><p>Included but in progress:</p><ul>
+<li>Bell</li>
+<li>Moveout</li>
+</ul><h1 id="installation">Installation</h1><ol>
+<li>
+<p>Purchase the repo access</p>
+</li>
+<li>
+<p>Copy Folder client-plugins/hotels to your athena project under src/core/client-plugins/</p>
+</li>
+<li>
+<p>Import client plugin in src/core/client-plugins/imports.ts:</p>
+<p><code data-astro-raw="">import './hotels/index';</code></p>
+</li>
+<li>
+<p>Copy Folder plugins/hotels to your athena project under src/core/plugins/</p>
+</li>
+<li>
+<p>Import server plugin in src/core/plugins/imports.ts:</p>
+<p><code data-astro-raw="">import './hotels/index';</code></p>
+</li>
+<li>
+<p>Copy folder src-webviews/pages/ to your athena project under src-webviews/src/pages</p>
+</li>
+<li>
+<p>Import VUE Page in src-webviews/pages/components.ts</p>
+<p><code data-astro-raw="">import Hotel from './hotels/Hotel.vue'</code></p>
+</li>
+<li>
+<p>Add to component list in src-webviews/pages/components.ts</p>
+<p><code data-astro-raw="">Hotel: shallowRef(Hotel),</code></p>
+</li>
+<li>
+<p>(optional) Install Interior plugin</p>
+</li>
+</ol><p><a href="https://github.com/jonasesser/altv-athena-plugin-interior">https://github.com/jonasesser/altv-athena-plugin-interior</a></p><h1 id="example-hotel">Example Hotel:</h1><pre class="language-null"><code data-astro-raw="" class="language-null">- NAME OF PROPERTY: Hilton
+- PRICE OF HOTEL: 150000
+- NUMBER OF UNITS: 50
+- DEFAULT PRICE FOR UNIT PER DAY: 40
+- POSITION OF RECEPTION: {"x":-141.5361, "y":-620.9186, "z":168.8204}
+- OPTIONAL IPL FOR RECEPTION: ex_dt1_02_office_01c
+- OPTIONAL PED POSITION FOR RECEPTION: {"x":-139.13621520996094,"y":-633.8536987304688,"z":168.82054138183594}
+- OPTIONAL PED ROTATION FOR RECEPTION: {"x":0,"y":0,"z":-0.05012647807598114}
+- POSTITION OF DEFAULT INTERIOR: {"x":152.2605,"y":-1004.471,"z":-98.99999}
+- OPTIONAL IPL FOR INTERIOR: null</code></pre></astro-fragment><!--]--></div><div class="inner-panel ma-4" data-v-7eac4949=""><a class="getter pa-3 bolder" href="https://mygp.gumroad.com/l/hotelplugin" target="_blank" rel="noopener noreferrer" data-v-7eac4949="">BUY $14.99</a><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-7eac4949="">Author</div><span class="grey--text mr-2 subtitle-2" style="font-size:14px;" data-v-7eac4949="">j0n4s</span><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-7eac4949="">Discord</div><div class="grey--text subtitle-2" data-v-7eac4949="">Add 'discord' to FrontMatter</div><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-7eac4949="">Keywords</div><div class="grey--text text--darken-2 subtitle-2" data-v-7eac4949="">premium, client, player, system</div></div></div></div></div></div></astro-root>
+    </body></html>
