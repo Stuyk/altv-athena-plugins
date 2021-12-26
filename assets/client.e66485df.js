@@ -1,0 +1,1 @@
+import{m as u,q as n,s as d}from"./vendor.7d2999dd.js";const o=u({props:{value:String},setup({value:e}){return e?()=>n("astro-fragment",{innerHTML:e}):()=>null}});var m=e=>(t,a,s)=>{delete a.class;const l=t.name?`${t.name} Host`:void 0,r={};s!=null&&(r.default=()=>n(o,{value:s})),d({name:l,render:()=>n(t,a,r)}).mount(e,!0)};export{m as default};
