@@ -7,7 +7,7 @@
             </a>
             <div class="header-right pr-4">
                 <a class="header-link pr-4" href="https://athenaframework.com/" title="Home">Home</a>
-                <a class="header-link pr-4" href="https://athena.stuyk.com/" title="Docs">Docs</a>
+                <a class="header-link pr-4" href="https://docs.athenaframework.com/" title="Docs">Docs</a>
                 <a class="header-link pr-4" href="https://discord.com/invite/pZvbJmKN8Y" title="Discord">Discord</a>
                 <a class="header-link" href="https://github.com/Stuyk/altv-athena-plugins-md" title="Post">
                     Post Plugin
