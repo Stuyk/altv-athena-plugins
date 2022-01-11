@@ -1,4 +1,6 @@
-import{_ as n}from"./preload-helper.8b70a8dd.js";import{l as p}from"./vendor.f3700654.js";p("1Rulnj",{value:!0},async()=>{const[{default:s},{default:a}]=await Promise.all([n(()=>import("./MainDisplay.17de610c.js"),["assets/MainDisplay.17de610c.js","assets/Header.ef06e2f6.js","assets/vendor.f3700654.js"]),n(()=>import("./client.6ec4751d.js"),["assets/client.6ec4751d.js","assets/vendor.f3700654.js"])]);return(e,t)=>a(e)(s,{content:{title:"Open Source Shop",description:"Bringing Shops to the Athena Framework, absolute free and open source! Licensed under MIT",author:"Der Lord!",version:"3.0.4+",images:["https://user-images.githubusercontent.com/82890183/148626519-5dc1ced7-a4d9-4f86-a349-26e58729cea8.png","https://user-images.githubusercontent.com/82890183/148335389-30f30d20-1228-45e0-b668-959eb37f7317.png"],keywords:["free","player","server","client","interface","system","item"],url:"https://github.com/Booster1212/OpenSourceShop",discord:"Der Lord!#6021",astro:{headers:[{depth:1,slug:"opensourceshop",text:"OpenSourceShop"},{depth:1,slug:"features",text:"Features"},{depth:1,slug:"setup-plugin",text:"Setup (Plugin)"},{depth:1,slug:"setup-buying-shop---247",text:"Setup (Buying Shop - 24/7)"},{depth:1,slug:"setup-drugsellers",text:"Setup (Drugsellers)"},{depth:1,slug:"images",text:"Images"}],source:`# OpenSourceShop![Fichier 37mdpi](https://user-images.githubusercontent.com/82890183/148142146-ba173e98-4c11-47d9-95da-6d83de2608af.png)
+import{_ as n}from"./preload-helper.8b70a8dd.js";import{l as p}from"./vendor.7d2999dd.js";p("1WMJ5g",{value:!0},async()=>{const[{default:s},{default:a}]=await Promise.all([n(()=>import("./MainDisplay.12b9d463.js"),["assets/MainDisplay.12b9d463.js","assets/Header.47e3a24d.js","assets/vendor.7d2999dd.js"]),n(()=>import("./client.e66485df.js"),["assets/client.e66485df.js","assets/vendor.7d2999dd.js"])]);return(t,e)=>a(t)(s,{content:{title:"Open Source Shop",description:"Bringing Shops to the Athena Framework, absolute free and open source! Licensed under MIT",author:"Der Lord!",version:"3.0.4+",images:["https://user-images.githubusercontent.com/82890183/148626519-5dc1ced7-a4d9-4f86-a349-26e58729cea8.png","https://user-images.githubusercontent.com/82890183/148910952-470985fe-5fed-41ed-8b87-08c9977f71c2.png"],keywords:["free","player","server","client","interface","system","item"],url:"https://github.com/Booster1212/OpenSourceShop",discord:"Der Lord!#6021",astro:{headers:[{depth:1,slug:"opensourceshop",text:"OpenSourceShop"},{depth:1,slug:"features",text:"Features"},{depth:1,slug:"setup-plugin",text:"Setup (Plugin)"},{depth:1,slug:"setup-buying-shop---247",text:"Setup (Buying Shop - 24/7)"},{depth:1,slug:"setup-drugsellers",text:"Setup (Drugsellers)"}],source:`# OpenSourceShop
+
+<img src="https://user-images.githubusercontent.com/82890183/148142146-ba173e98-4c11-47d9-95da-6d83de2608af.png" width="650" />
 
 Welcome to Athena Open Source Shop! 
 Bringing Shops to the Athena Framework as absolute free and open source solution licensed as MIT. 
@@ -87,13 +89,13 @@ export const sellLists = [burgerBuyer, /*anotherExampleList*/]; // Dont forget t
 
 \`\`\`
 
-# Images
-![unknown](https://user-images.githubusercontent.com/82890183/148910952-470985fe-5fed-41ed-8b87-08c9977f71c2.png)
+<img src="https://user-images.githubusercontent.com/82890183/148910952-470985fe-5fed-41ed-8b87-08c9977f71c2.png" width="500"/>
 
 ![image](https://user-images.githubusercontent.com/82890183/148634183-00270cd2-ba69-4a46-94ba-58434967c890.png)
 
 Join the plugin Discord -> https://discord.gg/Pk6gQ2agbQ
-`,html:`<h1 id="opensourceshop">OpenSourceShop<img src="https://user-images.githubusercontent.com/82890183/148142146-ba173e98-4c11-47d9-95da-6d83de2608af.png" alt="Fichier 37mdpi"></h1>
+`,html:`<h1 id="opensourceshop">OpenSourceShop</h1>
+<img src="https://user-images.githubusercontent.com/82890183/148142146-ba173e98-4c11-47d9-95da-6d83de2608af.png" width="650" />
 <p>Welcome to Athena Open Source Shop!
 Bringing Shops to the Athena Framework as absolute free and open source solution licensed as MIT.</p>
 <p>So feel free to do whatever you want!</p>
@@ -172,7 +174,6 @@ ShopUI<span class="token operator">:</span> <span class="token function">shallow
 
 <span class="token keyword">export</span> <span class="token keyword">const</span> sellLists <span class="token operator">=</span> <span class="token punctuation">[</span>burgerBuyer<span class="token punctuation">,</span> <span class="token comment">/*anotherExampleList*/</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Dont forget to add custom item lists here</span>
 </code></pre>
-<h1 id="images">Images</h1>
-<p><img src="https://user-images.githubusercontent.com/82890183/148910952-470985fe-5fed-41ed-8b87-08c9977f71c2.png" alt="unknown"></p>
+<img src="https://user-images.githubusercontent.com/82890183/148910952-470985fe-5fed-41ed-8b87-08c9977f71c2.png" width="500"/>
 <p><img src="https://user-images.githubusercontent.com/82890183/148634183-00270cd2-ba69-4a46-94ba-58434967c890.png" alt="image"></p>
-<p>Join the plugin Discord -> <a href="https://discord.gg/Pk6gQ2agbQ">https://discord.gg/Pk6gQ2agbQ</a></p>`}}},t)});
+<p>Join the plugin Discord -> <a href="https://discord.gg/Pk6gQ2agbQ">https://discord.gg/Pk6gQ2agbQ</a></p>`}}},e)});
