@@ -1,47 +1,121 @@
-<!DOCTYPE html><html><head>
-        <title>Athena Plugins - Athena Farming Controller by Der Lord!</title>
-        <link rel="stylesheet" href="../../../../assets/core.346cb1f3.css"><link rel="stylesheet" href="../../../../assets/AthenaFarmController.6261932e.css"><link rel="stylesheet" href="../../../../assets/Header.vue_vue_type_style_index_0_scoped_true_lang.11d4d93e.css"><link rel="stylesheet" href="../../../../assets/MainDisplay.vue_vue_type_style_index_1_scoped_true_lang.3ee87c15.css">
-        <meta name="title" content="Athena Plugins - Athena Farming Controller by Der Lord!">
-        <meta name="description" content="Some simple farming system for the Athena Framework - Free, Customizable and Open Source!">
-        <meta name="keywords" content="gtav roleplay script, gta 5 rp scripts, gta rp scripts, gta v rp server scripts, gta 5 roleplay server script, gta v roleplay ideas, gta v script, fivem esx full pack, fivem best rp servers, esx script, esx, fivem leaks hub, fivem leaks hud, fivem german leak discord">
-        <meta name="robots" content="index, follow">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="language" content="English">
+import{_ as n}from"./preload-helper.8b70a8dd.js";import{l as o}from"./vendor.7d2999dd.js";o("7sKXT",{value:!0},async()=>{const[{default:s},{default:a}]=await Promise.all([n(()=>import("./MainDisplay.12b9d463.js"),["assets/MainDisplay.12b9d463.js","assets/Header.47e3a24d.js","assets/vendor.7d2999dd.js"]),n(()=>import("./client.e66485df.js"),["assets/client.e66485df.js","assets/vendor.7d2999dd.js"])]);return(t,p)=>a(t)(s,{content:{title:"Athena Farming Controller",description:"Some simple farming system for the Athena Framework - Free, Customizable and Open Source!",author:"Der Lord!",version:"3.0.4+",images:["https://user-images.githubusercontent.com/82890183/148943871-d2df632e-1235-4ea5-af79-01e63857e41a.png"],keywords:["free","player","server","system","item"],url:"https://github.com/Booster1212/AthenaFarmController",discord:"Der Lord!#6021",astro:{headers:[{depth:1,slug:"athenafarmcontroller",text:"AthenaFarmController"},{depth:1,slug:"features",text:"Features"},{depth:1,slug:"example-route--",text:"Example Route ->"},{depth:1,slug:"setup",text:"Setup"}],source:`# AthenaFarmController
 
-        <!-- Facebook Meta Tags -->
-        <meta property="og:url" content="http://localhost:3000/content/plugins/derlord/AthenaFarmController">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Athena Plugins - Athena Farming Controller by Der Lord!">
-        <meta property="og:description" content="Some simple farming system for the Athena Framework - Free, Customizable and Open Source!">
-        <meta property="og:image" content="https://user-images.githubusercontent.com/82890183/148943871-d2df632e-1235-4ea5-af79-01e63857e41a.png">
+![Fichier 39mdpi](https://user-images.githubusercontent.com/82890183/148942562-124cf72b-2aca-4a9d-9693-d6f5be7e35c0.png)
 
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="https://user-images.githubusercontent.com/82890183/148943871-d2df632e-1235-4ea5-af79-01e63857e41a.png">
-        <meta property="twitter:domain" content="http://localhost:3000/content/plugins/derlord/AthenaFarmController">
-        <meta property="twitter:url" content="http://localhost:3000/content/plugins/derlord/AthenaFarmController">
-        <meta name="twitter:title" content="Athena Plugins - Athena Farming Controller by Der Lord!">
-        <meta name="twitter:description" content="Some simple farming system for the Athena Framework - Free, Customizable and Open Source!">
-        <meta name="twitter:image" content="https://user-images.githubusercontent.com/82890183/148943871-d2df632e-1235-4ea5-af79-01e63857e41a.png">
-    <script type="module" src="../../../../assets/AthenaFarmController.593340d3.js"></script>
+Welcome to the Athena Open Source Farm Controller!
 
+Big Thanks especially to deeMace & Borgi.
 
-</head>
-    <body>
-        <astro-root uid="7sKXT"><div id="vue" class="main" data-v-7eac4949=""><div id="header" class="header-wrapper" data-v-7eac4949="" data-v-6fe98885=""><div class="top split space-between" data-v-6fe98885=""><a class="header-text bolder pl-4" href="/search" data-v-6fe98885=""><img src="/favicon-32x32.png" height="25" width="25" class="pr-3" data-v-6fe98885=""><span data-v-6fe98885="">Athena Plugins</span></a><div class="header-right pr-4" data-v-6fe98885=""><a class="header-link pr-4" href="https://athenaframework.com/" title="Home" data-v-6fe98885="">Home</a><a class="header-link pr-4" href="https://docs.athenaframework.com/" title="Docs" data-v-6fe98885="">Docs</a><a class="header-link pr-4" href="https://discord.com/invite/pZvbJmKN8Y" title="Discord" data-v-6fe98885="">Discord</a><a class="header-link" href="https://github.com/Stuyk/altv-athena-plugins-md" title="Post" data-v-6fe98885=""> Post Plugin </a></div></div><!----></div><!----><div class="content-wrapper" data-v-7eac4949=""><div class="content" data-v-7eac4949=""><div class="slideshow" data-v-7eac4949=""><div class="slide" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-7eac4949=""></div><div class="slide-ctrl-left bolder white--text" data-v-7eac4949="">&lt;</div><div class="slide slide-middle" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-7eac4949=""></div><div class="slide-ctrl-right bolder white--text" data-v-7eac4949="">&gt;</div><div class="slide" style="background-image: url('https://i.imgur.com/7QUmJI3.jpeg');" data-v-7eac4949=""></div></div><div class="panels" data-v-7eac4949=""><div class="inner-panel ma-4" lang="ts" data-v-7eac4949=""><!--[--><astro-fragment><h1 id="athenafarmcontroller">AthenaFarmController</h1><p><img src="https://user-images.githubusercontent.com/82890183/148942562-124cf72b-2aca-4a9d-9693-d6f5be7e35c0.png" alt="Fichier 39mdpi"></p><p>Welcome to the Athena Open Source Farm Controller!</p><p>Big Thanks especially to deeMace &amp; Borgi.</p><h1 id="features">Features</h1><ul>
+# Features
+- Tools with decreasing durability (Build your own)
+- Build Custom Routes with custom item returns
+- Random item returns so each time you farm you'll get another item maybe, can be based on Tools Rarity.
+- Build different spots, required tools.
+- Anti "E-KEY" Macro
+- Optional Blips, Markers, Particles, Animations & Attachables.
+- Synced Tool Objects.
+- Userfriendly Usage per Toolbar
+- Integrate Fishing System! : )
+
+# Example Route ->
+\`\`\`typescript
+// Type IFarming is located here -> athena-os-farming/src/interfaces/IFarming.ts
+// import * as alt from 'alt-server';
+// import { miningLocations } from '../farmingRoutes/miningRoute/miningLocations';
+
+export const farmRegistry: Array<IFarming> = [
+    // MINING ROUTE
+    {
+        routeName: 'Mining Route',
+        requiredTool: [
+            'Mining-Drill', // Uncommon
+            'Mining-Drill 2', // Common
+            'Mining-Drill 3', // Rare
+            'Mining-Drill 4', // Very Rare
+            'Mining-Drill 5', // Legendary
+            'Mining-Drill 6', // Unique
+        ],
+        isAnimation: true,
+        farmDuration: 10000,
+        blip: {
+            text: 'Miners Place',
+            color: 40,
+            sprite: 88,
+            scale: 1,
+            isBlip: true,
+            position: { x: 2912.41748046875, y: 2778.765380859375, z: 44.96366882324219 - 1 } as alt.Vector3,
+        },
+        marker: {
+            type: 2,
+            color: {
+                r: 10,
+                g: 156,
+                b: 0,
+                a: 255,
+            },
+            bobUpAndDown: true,
+            rotate: true,
+            isMarker: true,
+        },
+        animation: {
+            dict: 'amb@world_human_const_drill@male@drill@base',
+            name: 'base',
+            flags: ANIMATION_FLAGS.REPEAT,
+        },
+        attacheable: {
+            bone: 60309,
+            model: 'prop_tool_jackham',
+            pos: { x: 0, y: 0, z: 0 } as alt.Vector3,
+            rot: { x: 0, y: 0, z: 0 } as alt.Vector3,
+        },
+        spots: {
+            positions: miningLocations,
+        },
+        outcome: {
+            common: ['Iron Ore', 'Cooper Ore'],
+            rare: ['Silver Ore'],
+            epic: ['Gold Ore', 'Titanium Ore'],
+        },
+    },
+];
+    
+export const miningLocations: Array<alt.Vector3> = [
+    { x: 2975.733154296875, y: 2791.59716796875, z: 40.515140533447266 - 1 } as alt.Vector3,
+    { x: 2966.3916015625, y: 2775.824462890625, z: 38.95657730102539 - 1 } as alt.Vector3,
+    { x: 2951.238037109375, y: 2770.526611328125, z: 38.99069595336914 - 1 } as alt.Vector3,
+    { x: 2937.0654296875, y: 2778.3662109375, z: 39.21839141845703 - 1 } as alt.Vector3,
+    { x: 2927.2353515625, y: 2794.62744140625, z: 40.72378921508789 - 1 } as alt.Vector3,
+    { x: 2932.526611328125, y: 2813.072021484375, z: 43.69724655151367 - 1 } as alt.Vector3,
+    { x: 2947.60986328125, y: 2817.997802734375, z: 42.51972579956055 - 1 } as alt.Vector3,
+    { x: 2966.80712890625, y: 2806.69384765625, z: 42.09012222290039 - 1 } as alt.Vector3,
+    { x: 2953.723876953125, y: 2789.539794921875, z: 41.44651794433594 - 1 } as alt.Vector3,
+];
+\`\`\`
+
+# Setup
+- This is an Serverside plugin, so it has to be located at src/core/server-plugins/athena-os-farming
+- Import it by import './athena-os-farming/index'; and you are good to go.`,html:`<h1 id="athenafarmcontroller">AthenaFarmController</h1>
+<p><img src="https://user-images.githubusercontent.com/82890183/148942562-124cf72b-2aca-4a9d-9693-d6f5be7e35c0.png" alt="Fichier 39mdpi"></p>
+<p>Welcome to the Athena Open Source Farm Controller!</p>
+<p>Big Thanks especially to deeMace &#x26; Borgi.</p>
+<h1 id="features">Features</h1>
+<ul>
 <li>Tools with decreasing durability (Build your own)</li>
 <li>Build Custom Routes with custom item returns</li>
-<li>Random item returns so each time you farm you’ll get another item maybe, can be based on Tools Rarity.</li>
+<li>Random item returns so each time you farm you\u2019ll get another item maybe, can be based on Tools Rarity.</li>
 <li>Build different spots, required tools.</li>
-<li>Anti “E-KEY” Macro</li>
-<li>Optional Blips, Markers, Particles, Animations &amp; Attachables.</li>
+<li>Anti \u201CE-KEY\u201D Macro</li>
+<li>Optional Blips, Markers, Particles, Animations &#x26; Attachables.</li>
 <li>Synced Tool Objects.</li>
 <li>Userfriendly Usage per Toolbar</li>
 <li>Integrate Fishing System! : )</li>
-</ul><h1 id="example-route--">Example Route -&gt;</h1><pre class="language-typescript"><code data-astro-raw="" class="language-typescript"><span class="token comment">// Type IFarming is located here -&gt; athena-os-farming/src/interfaces/IFarming.ts</span>
+</ul>
+<h1 id="example-route--">Example Route -></h1>
+<pre class="language-typescript"><code data-astro-raw class="language-typescript"><span class="token comment">// Type IFarming is located here -> athena-os-farming/src/interfaces/IFarming.ts</span>
 <span class="token comment">// import * as alt from 'alt-server';</span>
 <span class="token comment">// import { miningLocations } from '../farmingRoutes/miningRoute/miningLocations';</span>
 
-<span class="token keyword">export</span> <span class="token keyword">const</span> farmRegistry<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span>IFarming<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> farmRegistry<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span>IFarming<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token comment">// MINING ROUTE</span>
     <span class="token punctuation">{</span>
         routeName<span class="token operator">:</span> <span class="token string">'Mining Route'</span><span class="token punctuation">,</span>
@@ -97,7 +171,7 @@
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span><span class="token punctuation">;</span>
     
-<span class="token keyword">export</span> <span class="token keyword">const</span> miningLocations<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span>alt<span class="token punctuation">.</span>Vector3<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> miningLocations<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span>alt<span class="token punctuation">.</span>Vector3<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token number">2975.733154296875</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2791.59716796875</span><span class="token punctuation">,</span> z<span class="token operator">:</span> <span class="token number">40.515140533447266</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token keyword">as</span> alt<span class="token punctuation">.</span>Vector3<span class="token punctuation">,</span>
     <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token number">2966.3916015625</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2775.824462890625</span><span class="token punctuation">,</span> z<span class="token operator">:</span> <span class="token number">38.95657730102539</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token keyword">as</span> alt<span class="token punctuation">.</span>Vector3<span class="token punctuation">,</span>
     <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token number">2951.238037109375</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2770.526611328125</span><span class="token punctuation">,</span> z<span class="token operator">:</span> <span class="token number">38.99069595336914</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token keyword">as</span> alt<span class="token punctuation">.</span>Vector3<span class="token punctuation">,</span>
@@ -107,8 +181,9 @@
     <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token number">2947.60986328125</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2817.997802734375</span><span class="token punctuation">,</span> z<span class="token operator">:</span> <span class="token number">42.51972579956055</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token keyword">as</span> alt<span class="token punctuation">.</span>Vector3<span class="token punctuation">,</span>
     <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token number">2966.80712890625</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2806.69384765625</span><span class="token punctuation">,</span> z<span class="token operator">:</span> <span class="token number">42.09012222290039</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token keyword">as</span> alt<span class="token punctuation">.</span>Vector3<span class="token punctuation">,</span>
     <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token number">2953.723876953125</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2789.539794921875</span><span class="token punctuation">,</span> z<span class="token operator">:</span> <span class="token number">41.44651794433594</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token keyword">as</span> alt<span class="token punctuation">.</span>Vector3<span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre><h1 id="setup">Setup</h1><ul>
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<h1 id="setup">Setup</h1>
+<ul>
 <li>This is an Serverside plugin, so it has to be located at src/core/server-plugins/athena-os-farming</li>
-<li>Import it by import ‘./athena-os-farming/index’; and you are good to go.</li>
-</ul></astro-fragment><!--]--></div><div class="inner-panel ma-4" data-v-7eac4949=""><a class="getter pa-3 bolder" href="https://github.com/Booster1212/AthenaFarmController" target="_blank" rel="noopener noreferrer" data-v-7eac4949="">GET PLUGIN</a><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-7eac4949="">Author</div><span class="grey--text mr-2 subtitle-2" style="font-size:14px;" data-v-7eac4949="">Der Lord!</span><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-7eac4949="">Discord</div><div class="grey--text subtitle-2" data-v-7eac4949="">Der Lord!#6021</div><div class="grey--text overline mb-2 mt-6 text--darken-1" data-v-7eac4949="">Keywords</div><div class="grey--text text--darken-2 subtitle-2" data-v-7eac4949="">free, player, server, system, item</div></div></div></div></div></div></astro-root>
-    </body></html>
+<li>Import it by import \u2018./athena-os-farming/index\u2019; and you are good to go.</li>
+</ul>`}}},p)});
